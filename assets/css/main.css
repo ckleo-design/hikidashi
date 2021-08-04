@@ -1,0 +1,80 @@
+.hide {
+  display: none;
+}
+
+header {
+  width: 86%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .pageLogo img {
+  width: auto;
+  height: 24px;
+}
+
+header .right nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+header .right nav ul li {
+  list-style: none;
+}
+
+header .right nav ul li:not(:last-child) {
+  margin-right: 24px;
+}
+
+#filterSection {
+  width: 86%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#filterSection .filterBlock h3.filterTitle {
+  font-size: 14px;
+}
+
+#filterSection .filterBlock .filterList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#filterSection .filterBlock .filterList .filterItem {
+  list-style: none;
+  line-height: 1.7em;
+}
+
+#filterSection .filterBlock .filterList .filterItem:not(:last-child) {
+  margin-right: 24px;
+}
+/*# sourceMappingURL=main.css.map */

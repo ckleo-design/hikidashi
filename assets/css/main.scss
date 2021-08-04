@@ -1,0 +1,69 @@
+.hide {
+    display: none;
+}
+
+header {
+    width: 86%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .pageLogo {
+        img {
+            width: auto;
+            height: 24px;
+        }
+    }
+
+    .right {
+        nav {
+            ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
+                li {
+                    list-style: none;
+
+                    &:not(:last-child) {
+                        margin-right: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#filterSection {
+    width: 86%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    .filterBlock {
+        h3.filterTitle {
+            font-size: 14px;
+        }
+
+        .filterList {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .filterItem {
+                list-style: none;
+                line-height: 1.7em;
+
+                &:not(:last-child) {
+                    margin-right: 24px;
+                }
+
+            }
+        }
+    }
+
+}
