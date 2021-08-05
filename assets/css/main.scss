@@ -2,14 +2,22 @@
     display: none;
 }
 
-header {
-    width: 86%;
-    max-width: 1920px;
+%basicSize {
+    width: 88.33%;
+    max-width: 1272px;
     margin: 0 auto;
     padding: 20px 0;
+}
+
+%flexRow {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+
+header {
+    @extend %basicSize;
+    @extend %flexRow;
     justify-content: space-between;
 
     .pageLogo {
@@ -22,9 +30,7 @@ header {
     .right {
         nav {
             ul {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                @extend %flexRow;
 
                 li {
                     list-style: none;
@@ -38,11 +44,12 @@ header {
     }
 }
 
+//filter box
 #filterSection {
-    width: 86%;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 20px 0;
+    border: 1px solid #2a2a2a;
+    @extend %basicSize;
+    padding: 20px;
+    box-sizing: border-box;
 
     .filterBlock {
         h3.filterTitle {
@@ -50,8 +57,7 @@ header {
         }
 
         .filterList {
-            display: flex;
-            flex-direction: row;
+            @extend %flexRow;
             flex-wrap: wrap;
 
             .filterItem {
@@ -66,4 +72,72 @@ header {
         }
     }
 
+    //filterBtn
+    .filterBtn {
+        display: block;
+        text-align: center;
+        margin-top: 24px;
+
+        a {
+            border: 1px solid #000;
+            border-radius: 45px;
+            padding: 8px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                background: url("../images/filterIcon.png") 0 0 no-repeat;
+                background-size: cover;
+                width: 18px;
+                height: 18px;
+                vertical-align: bottom;
+                margin-right: 4px;
+            }
+        }
+    }
+}
+
+//footer
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #2a2a2a;
+    padding: 20px 0;
+
+    nav {
+        ul {
+            @extend %flexRow;
+            width: fit-content;
+            margin: 0 auto;
+
+            li {
+                list-style: none;
+
+                &:not(:last-child) {
+                    margin-right: 12px;
+                }
+
+                a {
+                    color: #fdfdfd;
+                    font-size: 12px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        margin-top: 16px;
+
+        p {
+            text-align: center;
+            font-size: 10px;
+            color: #a5a5a5;
+        }
+    }
 }
