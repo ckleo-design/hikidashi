@@ -8,6 +8,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
+
+
 </head>
 
 <body>
@@ -74,16 +81,24 @@
         </div>
     </section>
     <main>
-        <section id="displaySection">
+        <!-- <section id="displaySection">
             <h2 class="hide">web design sample</h2>
             <div class="displayBlock">
                 <div class="displayItem">
-                    <a href="#"><img src="assets/images/D-image.png" alt="sample site "></a>
+                    <a href="#"><img src="assets/images/D-image.png" alt="sample site"></a>
                     <a href="#">サンプルサイトTitle</a>
                 </div>
             </div>
-        </section>
+        </section> -->
+
     </main>
+
+    <script id="handlebars-demo" type="text/x-handlebars-template">
+        <div>
+      My name is {{name}}. I am a {{occupation}}.
+   </div>
+</script>
+
     <footer>
         <nav>
             <ul>
