@@ -2,14 +2,14 @@
   display: none;
 }
 
-header, #filterSection {
+header, #filterSection, #displaySection {
   width: 88.33%;
   max-width: 1272px;
   margin: 0 auto;
   padding: 20px 0;
 }
 
-header, header .right nav ul, #filterSection .filterBlock .filterList, footer nav ul {
+header, header .right nav ul, #filterSection .filterBlock .filterList, footer nav ul, #displaySection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,8 +93,6 @@ header .right nav ul li:not(:last-child) {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background: #2a2a2a;
   padding: 20px 0;
@@ -129,5 +127,26 @@ footer .copyright p {
   text-align: center;
   font-size: 10px;
   color: #a5a5a5;
+}
+
+#displaySection {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#displaySection .nameLink {
+  margin: 10px 0 12px 2px;
+  display: block;
+  color: #000;
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "noto sans jp", Arial, Helvetica, sans-serif;
+  white-space: pre-wrap;
 }
 /*# sourceMappingURL=main.css.map */
