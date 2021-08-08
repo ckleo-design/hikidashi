@@ -1,5 +1,5 @@
 $(document).ready(function() {
     $('.filterBtn a').click(function(){
-        $('.filterBlock').toggle(300);
-    });
+        $('#filterSection').toggleClass('show');
+    });    
 });

@@ -15,10 +15,24 @@
     flex-wrap: nowrap;
 }
 
+%fontEng {
+    font-family: Formula Condensed, Arial, Helvetica, sans-serif;
+}
+
+%fontJap {
+    font-family: Noto Sans JP Regular, Arial, Helvetica, sans-serif;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+
 header {
     @extend %basicSize;
     @extend %flexRow;
     justify-content: space-between;
+    align-items: flex-end;
 
     .pageLogo {
         img {
@@ -31,9 +45,15 @@ header {
         nav {
             ul {
                 @extend %flexRow;
+                width: fit-content;
+                margin-left: auto;
 
                 li {
+                    @extend %fontEng;
                     list-style: none;
+                    font-size: 10px;
+                    line-height: 100%;
+                    letter-spacing: 0.03em;
 
                     &:not(:last-child) {
                         margin-right: 24px;
@@ -41,17 +61,44 @@ header {
                 }
             }
         }
+
+        .subtitle {
+            margin-top: 12px;
+
+            p {
+                text-align: right;
+                @extend %fontJap;
+                font-size: 12px;
+                line-height: 100%;
+                color: #939393;
+            }
+        }
     }
 }
 
 //filter box
 #filterSection {
-    border: 1px solid #2a2a2a;
     @extend %basicSize;
     padding: 20px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 1px 6px 7px 3px #f1f1f100;
+
+    &.show {
+        box-shadow: 1px 6px 7px 3px #f1f1f170;
+
+        .filterBlock {
+            display: block;
+        }
+    }
 
     .filterBlock {
+        display: none;
+        transition: 3s;
+
+
+
         h3.filterTitle {
             font-size: 14px;
         }
@@ -76,9 +123,10 @@ header {
     .filterBtn {
         display: block;
         text-align: center;
-        margin-top: 24px;
+        margin-top: 40px;
 
         a {
+            @extend %fontEng;
             border: 1px solid #000;
             border-radius: 45px;
             padding: 8px 40px;
@@ -86,6 +134,7 @@ header {
             font-weight: bold;
             color: #000;
             text-decoration: none;
+            letter-spacing: 0.03em;
 
             &::before {
                 content: "";
@@ -94,7 +143,7 @@ header {
                 background-size: cover;
                 width: 18px;
                 height: 18px;
-                vertical-align: bottom;
+                vertical-align: middle;
                 margin-right: 4px;
             }
         }
