@@ -27,6 +27,9 @@ img {
     vertical-align: bottom;
 }
 
+a {
+    text-decoration: none;
+}
 
 header {
     @extend %basicSize;
@@ -51,7 +54,7 @@ header {
                 li {
                     @extend %fontEng;
                     list-style: none;
-                    font-size: 10px;
+                    font-size: 12px;
                     line-height: 100%;
                     letter-spacing: 0.03em;
 
@@ -79,14 +82,14 @@ header {
 //filter box
 #filterSection {
     @extend %basicSize;
-    padding: 20px;
+    padding: 40px 20px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 25px;
-    box-shadow: 1px 6px 7px 3px #f1f1f100;
+    box-shadow: 1px 6px 7px 3px #eae8e800;
 
     &.show {
-        box-shadow: 1px 6px 7px 3px #f1f1f170;
+        box-shadow: 1px 6px 7px 3px #eae8e870;
 
         .filterBlock {
             display: block;
@@ -100,7 +103,15 @@ header {
 
 
         h3.filterTitle {
-            font-size: 14px;
+            @extend %fontEng;
+            color: #404040;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 100%;
+            letter-spacing: 0.03em;
+            margin-bottom: 3px;
+
+
         }
 
         .filterList {
@@ -109,7 +120,15 @@ header {
 
             .filterItem {
                 list-style: none;
-                line-height: 1.7em;
+
+                a {
+                    @extend %fontJap;
+                    color: #000;
+                    font-size: 16px;
+                    line-height: 160%;
+                    font-weight: normal;
+                    letter-spacing: 0.01em;
+                }
 
                 &:not(:last-child) {
                     margin-right: 24px;
@@ -133,7 +152,6 @@ header {
             font-size: 18px;
             font-weight: bold;
             color: #000;
-            text-decoration: none;
             letter-spacing: 0.03em;
 
             &::before {
@@ -172,7 +190,6 @@ footer {
                 a {
                     color: #fdfdfd;
                     font-size: 12px;
-                    text-decoration: none;
                 }
             }
         }
@@ -194,19 +211,30 @@ footer {
     @extend %basicSize;
     @extend %flexRow;
     flex-wrap: wrap;
-    gap: 5px;
-    justify-content: space-between;
+    gap: 1%;
+    justify-content: center;
 
-    .nameLink {
-        margin: 10px 0 12px 2px;
-        display: block;
-        color: #000;
-        font-size: 12px;
-        line-height: 120%;
-        font-weight: normal;
-        text-decoration: none;
-        font-family: "noto sans jp", Arial, Helvetica, sans-serif;
-        white-space: pre-wrap;
+    .displayItem {
+        width: 24%;
+        max-width: 300px;
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            max-height: 214px;
+        }
+
+        .nameLink {
+            margin: 10px 0 12px 2px;
+            display: block;
+            color: #000;
+            font-size: 12px;
+            line-height: 120%;
+            font-weight: normal;
+            font-family: "noto sans jp", Arial, Helvetica, sans-serif;
+            white-space: pre-wrap;
+        }
     }
 
 }
