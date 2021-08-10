@@ -1,48 +1,25 @@
   $(document).ready(function() {    
-    // website 
-    const source = $("#displayTemplate").html();
-    const template = Handlebars.compile(source);
-    const values = {
-        data:[
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "栃木県のホームページ制作・WEB制作\nRe:design アールイーデザイン"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-            ]
-          };
-          const html = template(values);
-          $("#displaySection").html(html);
-});
-$(document).ready(function() {    
     //filter
     const source = $("#filterTemplate").html();
     const template = Handlebars.compile(source);
     const values = {
       data:[
-            {item : "シンプル"},
-            {item : "スタイリッシュ"},
-            {item : "タイポグラフィ"},
-            {item : "グラフィカル"},
-            {item : "ポップ"},
-            {item : "ダイナミック"},
-            {item : "エレガント"},
-            {item : "キュート・ガーリー"},
-            {item : "ナチュラル"},
-            {item : "アート・芸術"},
-            {item : "グリッド"},
-            {item : "イラスト"},
-            {item : "和風"},
-            {item : "手書き・アナログ"},
-            {item : "レトロ"},
-            {item : "3D"},
+            {dataFilter : "" , item : "シンプル"},
+            {dataFilter : "" , item : "スタイリッシュ"},
+            {dataFilter : "" , item : "グラフィカル"},
+            {dataFilter : "" , item : "ポップ"},
+            {dataFilter : "" , item : "ダイナミック"},
+            {dataFilter : "" , item : "エレガント"},
+            {dataFilter : "" , item : "キュート・ガーリー"},
+            {dataFilter : "" , item : "ナチュラル"},
+            {dataFilter : "" , item : "アート・芸術"},
+            {dataFilter : "" , item : "グリッド"},
+            {dataFilter : "" , item : "イラスト"},
+            {dataFilter : "" , item : "和風"},
+            {dataFilter : "" , item : "手書き・アナログ"},
+            {dataFilter : "" , item : "レトロ"},
+            {dataFilter : "" , item : "3D"},
+            {dataFilter : "" , item : "ポートフォリオ"},
       ]
     };
     const html = template(values);
@@ -53,22 +30,36 @@ $(document).ready(function() {
     const template = Handlebars.compile(source);
     const values = {
       data:[
-              {item : "カラフル"},
-              {item : "白"},
-              {item : "グレー"},
-              {item : "黒"},
-              {item : "ベージュ"},
-              {item : "オレンジ"},
-              {item : "緑"},
-              {item : "茶"},
-              {item : "赤"},
-              {item : "ピンク"},
-              {item : "青"},
-              {item : "紫"},
-              {item : "金"},
-              {item : "黄"}, 
+              {dataFilter : "c1" , item : "カラフル"},
+              {dataFilter : "c2" , item : "白"},
+              {dataFilter : "c3" , item : "グレー"},
+              {dataFilter : "c4" , item : "黒"},
+              {dataFilter : "c5" , item : "ベージュ"},
+              {dataFilter : "c6" , item : "オレンジ"},
+              {dataFilter : "c7" , item : "緑"},
+              {dataFilter : "c8" , item : "茶"},
+              {dataFilter : "c9" , item : "赤"},
+              {dataFilter : "c10" , item : "ピンク"},
+              {dataFilter : "c11" , item : "青"},
+              {dataFilter : "c12" , item : "紫"},
+              {dataFilter : "c13" , item : "金"},
+              {dataFilter : "c14" , item : "黄"}, 
       ]
     };
     const html = template(values);
     $("#filterBlock2").html(html);
+});
+  $(document).ready(function() {    
+    // website 
+    const source = $("#displayTemplate").html();
+    const template = Handlebars.compile(source);
+    const values = {
+        data:[
+              {category : "c1",siteUrl : "http://www.pushhere.com/", siteImg : "pushhere" , siteName : "Push | Branding, Integrated Marketing & \nInteractive Agency"},
+              {category : "['cat1','cat2']",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
+
+            ]
+          };
+          const html = template(values);
+          $("#displaySection").html(html);
 });

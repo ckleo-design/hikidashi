@@ -2,14 +2,14 @@
   display: none;
 }
 
-header, #filterSection, #displaySection {
+header, #filterSection, main #displaySection {
   width: 88.33%;
   max-width: 1272px;
   margin: 0 auto;
   padding: 20px 0;
 }
 
-header, header .right nav ul, #filterSection .filterBlock .filterList, footer nav ul, #displaySection {
+header, header .right nav ul, #filterSection .filterBlock .filterList, footer nav ul, main #displaySection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,7 +25,7 @@ header .right nav ul li, #filterSection .filterBlock h3.filterTitle, #filterSect
   font-family: Formula Condensed, Arial, Helvetica, sans-serif;
 }
 
-header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a {
+header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a, main #loadMore {
   font-family: Noto Sans JP Regular, Arial, Helvetica, sans-serif;
 }
 
@@ -37,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  position: relative;
+}
+
 header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -44,6 +48,7 @@ header {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  border-bottom: 1px solid #f3f3f3;
 }
 
 header .pageLogo img {
@@ -81,7 +86,7 @@ header .right .subtitle p {
 }
 
 #filterSection {
-  padding: 40px 20px;
+  padding: 0px 20px 40px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 25px;
@@ -90,8 +95,8 @@ header .right .subtitle p {
 }
 
 #filterSection.show {
-  -webkit-box-shadow: 1px 6px 7px 3px #eae8e870;
-          box-shadow: 1px 6px 7px 3px #eae8e870;
+  -webkit-box-shadow: 0px 10px 9px 3px #eae8e873;
+          box-shadow: 0px 10px 9px 3px #eae8e873;
 }
 
 #filterSection.show .filterBlock {
@@ -100,8 +105,12 @@ header .right .subtitle p {
 
 #filterSection .filterBlock {
   display: none;
-  -webkit-transition: 3s;
-  transition: 3s;
+  margin-top: 24px;
+}
+
+#filterSection .filterBlock:nth-child(2) {
+  padding-top: 40px;
+  margin-top: 0;
 }
 
 #filterSection .filterBlock h3.filterTitle {
@@ -128,6 +137,10 @@ header .right .subtitle p {
   line-height: 160%;
   font-weight: normal;
   letter-spacing: 0.01em;
+}
+
+#filterSection .filterBlock .filterList .filterItem a.active {
+  border-bottom: 2px solid #151515;
 }
 
 #filterSection .filterBlock .filterList .filterItem:not(:last-child) {
@@ -162,6 +175,8 @@ header .right .subtitle p {
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   background: #2a2a2a;
   padding: 20px 0;
@@ -197,7 +212,11 @@ footer .copyright p {
   color: #a5a5a5;
 }
 
-#displaySection {
+main {
+  padding-bottom: 160px;
+}
+
+main #displaySection {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1%;
@@ -206,19 +225,21 @@ footer .copyright p {
           justify-content: center;
 }
 
-#displaySection .displayItem {
+main #displaySection .displayItem {
   width: 24%;
   max-width: 300px;
 }
 
-#displaySection .displayItem img {
+main #displaySection .displayItem img {
   width: 100%;
   max-width: 300px;
   height: auto;
   max-height: 214px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-#displaySection .displayItem .nameLink {
+main #displaySection .displayItem .nameLink {
   margin: 10px 0 12px 2px;
   display: block;
   color: #000;
@@ -227,5 +248,24 @@ footer .copyright p {
   font-weight: normal;
   font-family: "noto sans jp", Arial, Helvetica, sans-serif;
   white-space: pre-wrap;
+}
+
+main #loadMore {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 40px auto 0;
+  border: 1px solid #000;
+  border-radius: 45px;
+  padding: 8px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.03em;
+}
+
+main #loadMore.noContent {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

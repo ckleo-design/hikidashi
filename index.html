@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>desahikidashi | デザインインプレッションに必要のデザインのひきだし</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
@@ -36,12 +36,17 @@
     <section id="filterSection" class="">
         <h2 class="hide">filter Area</h2>
         <div class="filterBlock">
+            <ul class="filterList">
+                <li class="filterItem"><a href="#" data-filter="all" class="active">すべて表示</a></li>
+            </ul>
+        </div>
+        <div class="filterBlock">
             <h3 class="filterTitle">style</h3>
             <div id="filterBlock1"></div>
             <script type="text/x-handlebars-template" id="filterTemplate">
                 <ul class="filterList">
                 {{#each data}}
-                    <li class="filterItem"><a href="#">{{item}}</a></li>
+                    <li class="filterItem"><a href="" data-filter="{{dataFilter}}">{{item}}</a></li>
                 {{/each}}
                 </ul>
             </script>
@@ -52,7 +57,7 @@
             <script type="text/x-handlebars-template" id="filterTemplate">
                 <ul class="filterList">
                 {{#each data}}
-                    <li class="filterItem" data-category="{{category}}"><a href="#">{{item}}</a></li>
+                    <li class="filterItem"><a href="" data-filter="{{dataFilter}}">{{item}}</a></li>
                 {{/each}}
                 </ul>
             </script>
@@ -65,13 +70,14 @@
         <section id="displaySection">
             <script type="text/x-handlebars-template" id="displayTemplate">
                 {{#each data}}
-                    <div class="displayItem" data-groups='["{{category}}"]'>
-                        <a class="imgLink" href="{{siteUrl}}" target="_blank"><img src="assets/images/{{siteImg}}.png" alt="{{siteName}}"></a>
+                    <div class="displayItem" data-category="{{category}}">
+                        <a class="imgLink" href="{{siteUrl}}" target="_blank"><img src="assets/images/data/{{siteImg}}.png" alt="{{siteName}}"></a>
                         <a class="nameLink" href="{{siteUrl}}" target="_blank">{{siteName}}</a>
                     </div>
                 {{/each}}
             </script>
         </section>
+        <a href="#" id="loadMore">もっと見る</a>
     </main>
     <footer>
         <nav>
@@ -85,6 +91,8 @@
             <p>Copyright © 2021 LESS ckleo All rights reserved.</p>
         </div>
     </footer>
+
+    <div class="displayItem" data-category="[cat1]"></div>
 </body>
 
 </html>
