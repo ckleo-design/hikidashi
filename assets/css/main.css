@@ -2,7 +2,7 @@
   display: none;
 }
 
-header, #filterSection, main #displaySection {
+header, #filterSection, main {
   width: 88.33%;
   max-width: 1272px;
   margin: 0 auto;
@@ -21,11 +21,17 @@ header, header .right nav ul, #filterSection .filterBlock .filterList, footer na
       flex-wrap: nowrap;
 }
 
-header .right nav ul li, #filterSection .filterBlock h3.filterTitle, #filterSection .filterBtn a {
+header .right nav ul li a, #filterSection .filterBlock h3.filterTitle, #filterSection .filterBtn a {
   font-family: Formula Condensed, Arial, Helvetica, sans-serif;
 }
 
-header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a, main #loadMore {
+header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a, main#aboutMain .content p,
+main#aboutMain .content a,
+main#aboutMain .sns p,
+main#aboutMain .sns a, main#policyMain .content p,
+main#policyMain .content a,
+main#policyMain .sns p,
+main#policyMain .sns a, main #loadMore {
   font-family: Noto Sans JP Regular, Arial, Helvetica, sans-serif;
 }
 
@@ -65,9 +71,17 @@ header .right nav ul {
 
 header .right nav ul li {
   list-style: none;
+}
+
+header .right nav ul li a {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0.03em;
+  color: #000;
+}
+
+header .right nav ul li a.pageNow {
+  border-bottom: 1px solid #000;
 }
 
 header .right nav ul li:not(:last-child) {
@@ -176,7 +190,7 @@ header .right .subtitle p {
 
 footer {
   position: absolute;
-  bottom: 0;
+  top: calc(100vh - 85px);
   width: 100%;
   background: #2a2a2a;
   padding: 20px 0;
@@ -214,6 +228,79 @@ footer .copyright p {
 
 main {
   padding-bottom: 160px;
+}
+
+main#aboutMain, main#policyMain {
+  padding-top: 40px;
+}
+
+main#aboutMain h2, main#policyMain h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.03em;
+}
+
+main#aboutMain h2 img, main#policyMain h2 img {
+  height: 24px;
+  width: auto;
+  margin-right: 2px;
+  vertical-align: baseline;
+}
+
+main#aboutMain .content,
+main#aboutMain .sns, main#policyMain .content,
+main#policyMain .sns {
+  padding: 24px 0;
+}
+
+main#aboutMain .content h3,
+main#aboutMain .sns h3, main#policyMain .content h3,
+main#policyMain .sns h3 {
+  margin: 24px 0 12px;
+}
+
+main#aboutMain .content p,
+main#aboutMain .content a,
+main#aboutMain .sns p,
+main#aboutMain .sns a, main#policyMain .content p,
+main#policyMain .content a,
+main#policyMain .sns p,
+main#policyMain .sns a {
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: normal;
+  color: #000;
+  letter-spacing: 0.03em;
+}
+
+main#aboutMain .content p span.contentttl,
+main#aboutMain .content p span.snsttl,
+main#aboutMain .content a span.contentttl,
+main#aboutMain .content a span.snsttl,
+main#aboutMain .sns p span.contentttl,
+main#aboutMain .sns p span.snsttl,
+main#aboutMain .sns a span.contentttl,
+main#aboutMain .sns a span.snsttl, main#policyMain .content p span.contentttl,
+main#policyMain .content p span.snsttl,
+main#policyMain .content a span.contentttl,
+main#policyMain .content a span.snsttl,
+main#policyMain .sns p span.contentttl,
+main#policyMain .sns p span.snsttl,
+main#policyMain .sns a span.contentttl,
+main#policyMain .sns a span.snsttl {
+  display: inline-block;
+  width: 100px;
+  margin-right: 40px;
+}
+
+main#aboutMain .content img,
+main#aboutMain .sns img, main#policyMain .content img,
+main#policyMain .sns img {
+  height: 20px;
+  width: auto;
+  margin-right: 2px;
+  vertical-align: baseline;
 }
 
 main #displaySection {

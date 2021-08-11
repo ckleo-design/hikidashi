@@ -57,11 +57,19 @@ header {
                 margin-left: auto;
 
                 li {
-                    @extend %fontEng;
                     list-style: none;
-                    font-size: 12px;
-                    line-height: 100%;
-                    letter-spacing: 0.03em;
+
+                    a {
+                        @extend %fontEng;
+                        font-size: 12px;
+                        line-height: 100%;
+                        letter-spacing: 0.03em;
+                        color: #000;
+
+                        &.pageNow {
+                            border-bottom: 1px solid #000;
+                        }
+                    }
 
                     &:not(:last-child) {
                         margin-right: 24px;
@@ -187,7 +195,7 @@ header {
 //footer
 footer {
     position: absolute;
-    bottom: 0;
+    top: calc(100vh - 85px);
     width: 100%;
     background: #2a2a2a;
     padding: 20px 0;
@@ -224,12 +232,66 @@ footer {
     }
 }
 
+
+
 main {
     padding-bottom: 160px;
+    @extend %basicSize;
 
-    // display
+    &#aboutMain,
+    &#policyMain {
+        padding-top: 40px;
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            letter-spacing: 0.03em;
+
+            img {
+                height: 24px;
+                width: auto;
+                margin-right: 2px;
+                vertical-align: baseline;
+            }
+        }
+
+        .content,
+        .sns {
+            padding: 24px 0;
+
+            h3 {
+                margin: 24px 0 12px;
+            }
+
+            p,
+            a {
+                @extend %fontJap;
+                font-size: 16px;
+                line-height: 160%;
+                font-weight: normal;
+                color: #000;
+                letter-spacing: 0.03em;
+
+                span.contentttl,
+                span.snsttl {
+                    display: inline-block;
+                    width: 100px;
+                    margin-right: 40px;
+                }
+            }
+
+            img {
+                height: 20px;
+                width: auto;
+                margin-right: 2px;
+                vertical-align: baseline;
+            }
+        }
+    }
+
+    // sample display
     #displaySection {
-        @extend %basicSize;
         @extend %flexRow;
         flex-wrap: wrap;
         gap: 1%;
