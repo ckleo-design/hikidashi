@@ -32,7 +32,8 @@ a {
 }
 
 body {
-    position: relative;
+    // position: relative;
+    // height: 100vh;
 }
 
 header {
@@ -195,7 +196,7 @@ header {
 //footer
 footer {
     position: absolute;
-    top: calc(100vh - 85px);
+    bottom: 0;
     width: 100%;
     background: #2a2a2a;
     padding: 20px 0;
@@ -214,7 +215,7 @@ footer {
                 }
 
                 a {
-                    color: #fdfdfd;
+                    color: #a5a5a5;
                     font-size: 12px;
                 }
             }
@@ -238,18 +239,16 @@ main {
     padding-bottom: 160px;
     @extend %basicSize;
 
-    &#aboutMain,
-    &#policyMain {
+    &#aboutMain {
         padding-top: 40px;
 
         h2 {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 20px;
+            font-weight: 600;
             color: #000;
-            letter-spacing: 0.03em;
 
             img {
-                height: 24px;
+                height: 20px;
                 width: auto;
                 margin-right: 2px;
                 vertical-align: baseline;
@@ -258,19 +257,24 @@ main {
 
         .content,
         .sns {
-            padding: 24px 0;
 
             h3 {
-                margin: 24px 0 12px;
+                margin: 36px 0 12px;
+                @extend %fontJap;
+                font-size: 18px;
+                line-height: 100%;
+                font-weight: bold;
+                color: #171717;
             }
 
             p,
             a {
+                margin-bottom: 10px;
                 @extend %fontJap;
-                font-size: 16px;
+                font-size: 14px;
                 line-height: 160%;
                 font-weight: normal;
-                color: #000;
+                color: #171717;
                 letter-spacing: 0.03em;
 
                 span.contentttl,
@@ -278,6 +282,13 @@ main {
                     display: inline-block;
                     width: 100px;
                     margin-right: 40px;
+                }
+
+                small,
+                small a {
+                    font-size: 11px;
+                    line-height: 100%;
+
                 }
             }
 
@@ -298,7 +309,7 @@ main {
         justify-content: center;
 
         .displayItem {
-            // display: none;
+            display: none;
             width: 24%;
             max-width: 300px;
 
@@ -308,6 +319,7 @@ main {
                 height: auto;
                 max-height: 214px;
                 object-fit: cover;
+                object-position: top center;
             }
 
             .nameLink {
@@ -331,8 +343,8 @@ main {
         margin: 40px auto 0;
         border: 1px solid #000;
         border-radius: 45px;
-        padding: 8px 40px;
-        font-size: 18px;
+        padding: 8px 20px;
+        font-size: 12px;
         font-weight: bold;
         color: #000;
         letter-spacing: 0.03em;
@@ -340,5 +352,16 @@ main {
         &.noContent {
             display: none;
         }
+    }
+
+    .totalPage p {
+        @extend %fontJap;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 10px;
+        line-height: 100%;
+        font-weight: normal;
+        color: #171717;
+        letter-spacing: 0.03em;
     }
 }

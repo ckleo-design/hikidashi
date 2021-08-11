@@ -1,4 +1,7 @@
 $(document).ready(function() {
+        if($(".displayItem").length <= 20) {
+            $("#loadMore").addClass("noContent");
+    }   
     $('.filterBtn a').click(function(){
         $('#filterSection').toggleClass('show');
     });   
@@ -12,6 +15,9 @@ $(document).ready(function() {
             }
         });
 
+    //sampleNum
+    const sampleNum = $(".displayItem").length;
+    $(".totalPage p").html(`total page ${sampleNum}`);
 
     //filter
        $(".filterItem a[data-filter='all']").click(function(){

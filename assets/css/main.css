@@ -25,13 +25,11 @@ header .right nav ul li a, #filterSection .filterBlock h3.filterTitle, #filterSe
   font-family: Formula Condensed, Arial, Helvetica, sans-serif;
 }
 
-header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a, main#aboutMain .content p,
+header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a, main#aboutMain .content h3,
+main#aboutMain .sns h3, main#aboutMain .content p,
 main#aboutMain .content a,
 main#aboutMain .sns p,
-main#aboutMain .sns a, main#policyMain .content p,
-main#policyMain .content a,
-main#policyMain .sns p,
-main#policyMain .sns a, main #loadMore {
+main#aboutMain .sns a, main #loadMore, main .totalPage p {
   font-family: Noto Sans JP Regular, Arial, Helvetica, sans-serif;
 }
 
@@ -41,10 +39,6 @@ img {
 
 a {
   text-decoration: none;
-}
-
-body {
-  position: relative;
 }
 
 header {
@@ -190,7 +184,7 @@ header .right .subtitle p {
 
 footer {
   position: absolute;
-  top: calc(100vh - 85px);
+  bottom: 0;
   width: 100%;
   background: #2a2a2a;
   padding: 20px 0;
@@ -212,7 +206,7 @@ footer nav ul li:not(:last-child) {
 }
 
 footer nav ul li a {
-  color: #fdfdfd;
+  color: #a5a5a5;
   font-size: 12px;
 }
 
@@ -230,47 +224,41 @@ main {
   padding-bottom: 160px;
 }
 
-main#aboutMain, main#policyMain {
+main#aboutMain {
   padding-top: 40px;
 }
 
-main#aboutMain h2, main#policyMain h2 {
-  font-size: 24px;
-  font-weight: bold;
+main#aboutMain h2 {
+  font-size: 20px;
+  font-weight: 600;
   color: #000;
-  letter-spacing: 0.03em;
 }
 
-main#aboutMain h2 img, main#policyMain h2 img {
-  height: 24px;
+main#aboutMain h2 img {
+  height: 20px;
   width: auto;
   margin-right: 2px;
   vertical-align: baseline;
 }
 
-main#aboutMain .content,
-main#aboutMain .sns, main#policyMain .content,
-main#policyMain .sns {
-  padding: 24px 0;
-}
-
 main#aboutMain .content h3,
-main#aboutMain .sns h3, main#policyMain .content h3,
-main#policyMain .sns h3 {
-  margin: 24px 0 12px;
+main#aboutMain .sns h3 {
+  margin: 36px 0 12px;
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: bold;
+  color: #171717;
 }
 
 main#aboutMain .content p,
 main#aboutMain .content a,
 main#aboutMain .sns p,
-main#aboutMain .sns a, main#policyMain .content p,
-main#policyMain .content a,
-main#policyMain .sns p,
-main#policyMain .sns a {
-  font-size: 16px;
+main#aboutMain .sns a {
+  margin-bottom: 10px;
+  font-size: 14px;
   line-height: 160%;
   font-weight: normal;
-  color: #000;
+  color: #171717;
   letter-spacing: 0.03em;
 }
 
@@ -281,22 +269,26 @@ main#aboutMain .content a span.snsttl,
 main#aboutMain .sns p span.contentttl,
 main#aboutMain .sns p span.snsttl,
 main#aboutMain .sns a span.contentttl,
-main#aboutMain .sns a span.snsttl, main#policyMain .content p span.contentttl,
-main#policyMain .content p span.snsttl,
-main#policyMain .content a span.contentttl,
-main#policyMain .content a span.snsttl,
-main#policyMain .sns p span.contentttl,
-main#policyMain .sns p span.snsttl,
-main#policyMain .sns a span.contentttl,
-main#policyMain .sns a span.snsttl {
+main#aboutMain .sns a span.snsttl {
   display: inline-block;
   width: 100px;
   margin-right: 40px;
 }
 
+main#aboutMain .content p small,
+main#aboutMain .content p small a,
+main#aboutMain .content a small,
+main#aboutMain .content a small a,
+main#aboutMain .sns p small,
+main#aboutMain .sns p small a,
+main#aboutMain .sns a small,
+main#aboutMain .sns a small a {
+  font-size: 11px;
+  line-height: 100%;
+}
+
 main#aboutMain .content img,
-main#aboutMain .sns img, main#policyMain .content img,
-main#policyMain .sns img {
+main#aboutMain .sns img {
   height: 20px;
   width: auto;
   margin-right: 2px;
@@ -313,6 +305,7 @@ main #displaySection {
 }
 
 main #displaySection .displayItem {
+  display: none;
   width: 24%;
   max-width: 300px;
 }
@@ -324,6 +317,8 @@ main #displaySection .displayItem img {
   max-height: 214px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
 }
 
 main #displaySection .displayItem .nameLink {
@@ -345,8 +340,8 @@ main #loadMore {
   margin: 40px auto 0;
   border: 1px solid #000;
   border-radius: 45px;
-  padding: 8px 40px;
-  font-size: 18px;
+  padding: 8px 20px;
+  font-size: 12px;
   font-weight: bold;
   color: #000;
   letter-spacing: 0.03em;
@@ -354,5 +349,15 @@ main #loadMore {
 
 main #loadMore.noContent {
   display: none;
+}
+
+main .totalPage p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 10px;
+  line-height: 100%;
+  font-weight: normal;
+  color: #171717;
+  letter-spacing: 0.03em;
 }
 /*# sourceMappingURL=main.css.map */

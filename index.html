@@ -12,8 +12,6 @@
     <!-- Include Handlebars from a CDN -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/data.js"></script>
-    <script type="text/javascript" src="assets/javascript/main.js"></script>
 </head>
 
 <body>
@@ -22,10 +20,10 @@
         <div class="right">
             <nav>
                 <ul>
-                    <li><a href="/assets/about.html">about</a></li>
-                    <li><a href="/assets/policy.html">policy</a></li>
-                    <li><a href="https://forms.gle/TNn6EovVNtyPoVtR8">contact</a></li>
-                    <li><a href="https://ckdesignblog.com/" target="_blank">blog</a></li>
+                    <li><a class="pageNow" href="">List</a></li>
+                    <li><a class="" href="/assets/about.html">About</a></li>
+                    <li><a class="" href="https://forms.gle/TNn6EovVNtyPoVtR8">Contact</a></li>
+                    <li><a class="" href="https://ckdesignblog.com/" target="_blank">Blog</a></li>
                 </ul>
             </nav>
             <div class="subtitle">
@@ -77,22 +75,27 @@
                 {{/each}}
             </script>
         </section>
-        <a href="#" id="loadMore">もっと見る</a>
+        <div><a href="#" id="loadMore">もっと見る</a></div>
+        <div class="totalPage">
+            <p></p>
+        </div>
     </main>
     <footer>
         <nav>
             <ul>
-                <li><a href="assets/about.html">about</a></li>
-                <li><a href="https://forms.gle/TNn6EovVNtyPoVtR8">contact</a></li>
-                <li><a href="https://ckdesignblog.com/" target="_blank">blog</a></li>
+                <li><a href="assets/about.html">About</a></li>
+                <li><a href="https://forms.gle/TNn6EovVNtyPoVtR8">Contact</a></li>
+                <li><a href="https://ckdesignblog.com/" target="_blank">Blog</a></li>
             </ul>
         </nav>
         <div class="copyright">
             <p>Copyright © 2021 LESS ckleo All rights reserved.</p>
         </div>
     </footer>
+    <script type="text/javascript" src="assets/javascript/data.js"></script>
+    <script type="text/javascript" src="assets/javascript/filter.js"></script>
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
 
-    <div class="displayItem" data-category="[cat1]"></div>
 </body>
 
 </html>
