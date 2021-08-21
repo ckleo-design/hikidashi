@@ -1,49 +1,14 @@
-  $(document).ready(function() {
-
-
-    // filter
-    var source = $("#displayTemplate").html();
-    var template = Handlebars.compile(source);
-    var values = {
+$(document).ready(function() {    
+    // website 
+    const source = $("#displayTemplate").html();
+    const template = Handlebars.compile(source);
+    const values = {
         data:[
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "栃木県のホームページ制作・WEB制作\nRe:design アールイーデザイン"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "栃木県のホームページ制作・WEB制作\nRe:design アールイーデザイン"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "栃木県のホームページ制作・WEB制作\nRe:design アールイーデザイン"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat1",siteUrl : "https://muuuuu.org/", siteImg : "cat1" , siteName : "確認サンプサイトTitle1"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat2",siteUrl : "https://muuuuu.org/", siteImg : "cat2" , siteName : "確認サンプサイトTitle2"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
-              {category : "cat3",siteUrl : "https://muuuuu.org/", siteImg : "cat3" , siteName : "確認サンプサイトTitle3"},
+              {category : "c1",siteUrl : "http://www.pushhere.com/", siteImg : "pushhere" , siteName : "Push | Branding, Integrated Marketing & \nInteractive Agency"},
+              {category : "['cat1','cat2']",siteUrl : "https://dpt.co/en/", siteImg : "dpt" , siteName : "Dpt. | A creative innovation studio | \nAR, VR, MR | Montreal"},
+
             ]
           };
-          var html = template(values);
+          const html = template(values);
           $("#displaySection").html(html);
 });

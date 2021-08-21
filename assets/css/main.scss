@@ -27,12 +27,21 @@ img {
     vertical-align: bottom;
 }
 
+a {
+    text-decoration: none;
+}
+
+body {
+    // position: relative;
+    // height: 100vh;
+}
 
 header {
     @extend %basicSize;
     @extend %flexRow;
     justify-content: space-between;
     align-items: flex-end;
+    border-bottom: 1px solid #f3f3f3;
 
     .pageLogo {
         img {
@@ -49,11 +58,19 @@ header {
                 margin-left: auto;
 
                 li {
-                    @extend %fontEng;
                     list-style: none;
-                    font-size: 10px;
-                    line-height: 100%;
-                    letter-spacing: 0.03em;
+
+                    a {
+                        @extend %fontEng;
+                        font-size: 12px;
+                        line-height: 100%;
+                        letter-spacing: 0.03em;
+                        color: #000;
+
+                        &.pageNow {
+                            border-bottom: 1px solid #000;
+                        }
+                    }
 
                     &:not(:last-child) {
                         margin-right: 24px;
@@ -79,14 +96,15 @@ header {
 //filter box
 #filterSection {
     @extend %basicSize;
-    padding: 20px;
+    padding: 0px 20px 40px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 25px;
-    box-shadow: 1px 6px 7px 3px #f1f1f100;
+    box-shadow: 1px 6px 7px 3px #eae8e800;
 
     &.show {
-        box-shadow: 1px 6px 7px 3px #f1f1f170;
+        box-shadow: 0px 10px 9px 3px #eae8e873;
+
 
         .filterBlock {
             display: block;
@@ -95,12 +113,25 @@ header {
 
     .filterBlock {
         display: none;
-        transition: 3s;
+        margin-top: 24px;
+
+        &:nth-child(2) {
+            padding-top: 40px;
+            margin-top: 0;
+        }
 
 
 
         h3.filterTitle {
-            font-size: 14px;
+            @extend %fontEng;
+            color: #404040;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 100%;
+            letter-spacing: 0.03em;
+            margin-bottom: 3px;
+
+
         }
 
         .filterList {
@@ -109,11 +140,24 @@ header {
 
             .filterItem {
                 list-style: none;
-                line-height: 1.7em;
+
+                a {
+                    @extend %fontJap;
+                    color: #000;
+                    font-size: 16px;
+                    line-height: 160%;
+                    font-weight: normal;
+                    letter-spacing: 0.01em;
+
+                    &.active {
+                        border-bottom: 2px solid #151515;
+                    }
+                }
 
                 &:not(:last-child) {
                     margin-right: 24px;
                 }
+
 
             }
         }
@@ -133,7 +177,6 @@ header {
             font-size: 18px;
             font-weight: bold;
             color: #000;
-            text-decoration: none;
             letter-spacing: 0.03em;
 
             &::before {
@@ -152,6 +195,8 @@ header {
 
 //footer
 footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     background: #2a2a2a;
     padding: 20px 0;
@@ -170,9 +215,8 @@ footer {
                 }
 
                 a {
-                    color: #fdfdfd;
+                    color: #a5a5a5;
                     font-size: 12px;
-                    text-decoration: none;
                 }
             }
         }
@@ -189,24 +233,135 @@ footer {
     }
 }
 
-//display
-#displaySection {
-    @extend %basicSize;
-    @extend %flexRow;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: space-between;
 
-    .nameLink {
-        margin: 10px 0 12px 2px;
-        display: block;
-        color: #000;
-        font-size: 12px;
-        line-height: 120%;
-        font-weight: normal;
-        text-decoration: none;
-        font-family: "noto sans jp", Arial, Helvetica, sans-serif;
-        white-space: pre-wrap;
+
+main {
+    padding-bottom: 160px;
+    @extend %basicSize;
+
+    &#aboutMain {
+        padding-top: 40px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+
+            img {
+                height: 20px;
+                width: auto;
+                margin-right: 2px;
+                vertical-align: baseline;
+            }
+        }
+
+        .content,
+        .sns {
+
+            h3 {
+                margin: 36px 0 12px;
+                @extend %fontJap;
+                font-size: 18px;
+                line-height: 100%;
+                font-weight: bold;
+                color: #171717;
+            }
+
+            p,
+            a {
+                margin-bottom: 10px;
+                @extend %fontJap;
+                font-size: 14px;
+                line-height: 160%;
+                font-weight: normal;
+                color: #171717;
+                letter-spacing: 0.03em;
+
+                span.contentttl,
+                span.snsttl {
+                    display: inline-block;
+                    width: 100px;
+                    margin-right: 40px;
+                }
+
+                small,
+                small a {
+                    font-size: 11px;
+                    line-height: 100%;
+
+                }
+            }
+
+            img {
+                height: 20px;
+                width: auto;
+                margin-right: 2px;
+                vertical-align: baseline;
+            }
+        }
     }
 
+    // sample display
+    #displaySection {
+        @extend %flexRow;
+        flex-wrap: wrap;
+        gap: 1%;
+        justify-content: center;
+
+        .displayItem {
+            display: none;
+            width: 24%;
+            max-width: 300px;
+
+            img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                max-height: 214px;
+                object-fit: cover;
+                object-position: top center;
+            }
+
+            .nameLink {
+                margin: 10px 0 12px 2px;
+                display: block;
+                color: #000;
+                font-size: 12px;
+                line-height: 120%;
+                font-weight: normal;
+                font-family: "noto sans jp", Arial, Helvetica, sans-serif;
+                white-space: pre-wrap;
+            }
+        }
+
+    }
+
+    #loadMore {
+        @extend %fontJap;
+        display: block;
+        width: fit-content;
+        margin: 40px auto 0;
+        border: 1px solid #000;
+        border-radius: 45px;
+        padding: 8px 20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000;
+        letter-spacing: 0.03em;
+
+        &.noContent {
+            display: none;
+        }
+    }
+
+    .totalPage p {
+        @extend %fontJap;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 10px;
+        line-height: 100%;
+        font-weight: normal;
+        color: #171717;
+        letter-spacing: 0.03em;
+    }
 }
