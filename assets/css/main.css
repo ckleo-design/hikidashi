@@ -9,7 +9,7 @@ header, #filterSection, main {
   padding: 20px 0;
 }
 
-header, header .right nav ul, #filterSection .filterBlock .filterList, footer nav ul, main #displaySection {
+header, header .right nav ul, #filterSection .filterArea .filterBlock .filterList, footer nav ul, main #displaySection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,11 +21,11 @@ header, header .right nav ul, #filterSection .filterBlock .filterList, footer na
       flex-wrap: nowrap;
 }
 
-header .right nav ul li a, #filterSection .filterBlock h3.filterTitle, #filterSection .filterBtn a {
+header .right nav ul li a, #filterSection .filterArea .filterBlock h3.filterTitle, #filterSection .filterBtn a {
   font-family: Formula Condensed, Arial, Helvetica, sans-serif;
 }
 
-header .right .subtitle p, #filterSection .filterBlock .filterList .filterItem a, main#aboutMain .content h3,
+header .right .subtitle p, #filterSection .filterArea .filterBlock .filterList .filterItem a, main#aboutMain .content h3,
 main#aboutMain .sns h3, main#aboutMain .content p,
 main#aboutMain .content a,
 main#aboutMain .sns p,
@@ -95,33 +95,22 @@ header .right .subtitle p {
 
 #filterSection {
   padding: 0px 20px 40px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 25px;
-  -webkit-box-shadow: 1px 6px 7px 3px #eae8e800;
-          box-shadow: 1px 6px 7px 3px #eae8e800;
 }
 
-#filterSection.show {
-  -webkit-box-shadow: 0px 10px 9px 3px #eae8e873;
-          box-shadow: 0px 10px 9px 3px #eae8e873;
+#filterSection .filterArea {
+  background: #cbcbcb;
 }
 
-#filterSection.show .filterBlock {
-  display: block;
-}
-
-#filterSection .filterBlock {
-  display: none;
+#filterSection .filterArea .filterBlock {
   margin-top: 24px;
 }
 
-#filterSection .filterBlock:nth-child(2) {
+#filterSection .filterArea .filterBlock:nth-child(2) {
   padding-top: 40px;
   margin-top: 0;
 }
 
-#filterSection .filterBlock h3.filterTitle {
+#filterSection .filterArea .filterBlock h3.filterTitle {
   color: #404040;
   font-size: 16px;
   font-weight: normal;
@@ -130,16 +119,16 @@ header .right .subtitle p {
   margin-bottom: 3px;
 }
 
-#filterSection .filterBlock .filterList {
+#filterSection .filterArea .filterBlock .filterList {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-#filterSection .filterBlock .filterList .filterItem {
+#filterSection .filterArea .filterBlock .filterList .filterItem {
   list-style: none;
 }
 
-#filterSection .filterBlock .filterList .filterItem a {
+#filterSection .filterArea .filterBlock .filterList .filterItem a {
   color: #000;
   font-size: 16px;
   line-height: 160%;
@@ -147,11 +136,11 @@ header .right .subtitle p {
   letter-spacing: 0.01em;
 }
 
-#filterSection .filterBlock .filterList .filterItem a.active {
+#filterSection .filterArea .filterBlock .filterList .filterItem a.active {
   border-bottom: 2px solid #151515;
 }
 
-#filterSection .filterBlock .filterList .filterItem:not(:last-child) {
+#filterSection .filterArea .filterBlock .filterList .filterItem:not(:last-child) {
   margin-right: 24px;
 }
 
@@ -298,14 +287,14 @@ main#aboutMain .sns img {
 main #displaySection {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 1%;
+  -webkit-column-gap: 1%;
+          column-gap: 1%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 main #displaySection .displayItem {
-  display: none;
   width: 24%;
   max-width: 300px;
 }
@@ -314,7 +303,7 @@ main #displaySection .displayItem img {
   width: 100%;
   max-width: 300px;
   height: auto;
-  max-height: 214px;
+  max-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top center;
@@ -322,7 +311,7 @@ main #displaySection .displayItem img {
 }
 
 main #displaySection .displayItem .nameLink {
-  margin: 10px 0 12px 2px;
+  margin: 10px 0 12px 5px;
   display: block;
   color: #000;
   font-size: 12px;

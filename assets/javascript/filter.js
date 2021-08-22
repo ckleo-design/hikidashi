@@ -4,6 +4,33 @@
     const template = Handlebars.compile(source);
     const values = {
       data:[
+            {dataFilter : "" , item : "ホテル・旅館"},
+            {dataFilter : "" , item : "学校・教育"},
+            {dataFilter : "" , item : "デザイン"},
+            {dataFilter : "" , item : "サービス"},
+            {dataFilter : "" , item : "運送・交通"},
+            {dataFilter : "" , item : "食品・飲料"},
+            {dataFilter : "" , item : "ファッション"},
+            {dataFilter : "" , item : "医療・病院"},
+            {dataFilter : "" , item : "アート・芸術"},
+            {dataFilter : "" , item : "ウェディング"},
+            {dataFilter : "" , item : "旅行"},
+            {dataFilter : "" , item : "ビューティー"},
+            {dataFilter : "" , item : "車・バイク"},
+            {dataFilter : "" , item : "自然"},
+            {dataFilter : "" , item : "団体"},
+            {dataFilter : "" , item : "スポーツ"},
+      ]
+    };
+    const html = template(values);
+    $("#filterBlock1").html(html);
+});
+  $(document).ready(function() {    
+    //filter
+    const source = $("#filterTemplate").html();
+    const template = Handlebars.compile(source);
+    const values = {
+      data:[
             {dataFilter : "" , item : "シンプル"},
             {dataFilter : "" , item : "スタイリッシュ"},
             {dataFilter : "" , item : "グラフィカル"},
@@ -23,7 +50,7 @@
       ]
     };
     const html = template(values);
-    $("#filterBlock1").html(html);
+    $("#filterBlock2").html(html);
 });
 $(document).ready(function() { 
     const source = $("#filterTemplate").html();
@@ -47,5 +74,5 @@ $(document).ready(function() {
       ]
     };
     const html = template(values);
-    $("#filterBlock2").html(html);
+    $("#filterBlock3").html(html);
 });
