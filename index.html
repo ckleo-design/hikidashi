@@ -8,46 +8,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>desahikidashi | デザインインプレッションに必要のデザインのひきだし</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- Include Handlebars from a CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="pageLogo"><img src="assets/images/hikidashi-logo.svg" alt="Page Logo"></div>
-        <div class="right">
-            <nav>
+        <div class="headerContent">
+            <div class="title">
+                <div class="pageLogo">
+                    <img src="assets/images/hikidashi-logo.svg" alt="Page Logo">
+                </div>
+                <div class="subtitle">
+                    <p>デザインインプレッションに必要のデザインのひきだし</p>
+                </div>
+            </div>
+            <div class="filterBtn">
+                <a href="#">filter</a>
+            </div>
+            <nav class="navList">
+                <div class="spIcon"></div>
                 <ul>
-                    <li><a class="pageNow" href="">List</a></li>
+                    <li><a class="pageNow" href="">List</a><span class="totalPage">(total page 10,285)</span>
+                    </li>
                     <li><a class="" href="/assets/about.html">About</a></li>
                     <li><a class="" href="https://forms.gle/TNn6EovVNtyPoVtR8">Contact</a></li>
                     <li><a class="" href="https://ckdesignblog.com/" target="_blank">Blog</a></li>
                 </ul>
             </nav>
-            <div class="subtitle">
-                <p>デザインインプレッションに必要のデザインのひきだし</p>
-            </div>
         </div>
     </header>
-    <section id="filterSection" class="show">
-        <h2 class="hide">filter Area</h2>
-        <div class="filterBtn">
-            <a href="#">filter</a>
+    <main>
+        <section id="displaySection">
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">{栃木県のホームページ制作・WEB制作<br>Re:design アールイーデザイン</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">Safe Haven Investment</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">ASIAN KUNG-FU GENERATION 25周年特設サイト</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">RC Victory Park Residences</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">{栃木県のホームページ制作・WEB制作<br>Re:design アールイーデザイン</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">Safe Haven Investment</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">ASIAN KUNG-FU GENERATION 25周年特設サイト</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">RC Victory Park Residences</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">{栃木県のホームページ制作・WEB制作<br>Re:design アールイーデザイン</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">Safe Haven Investment</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">ASIAN KUNG-FU GENERATION 25周年特設サイト</a>
+            </div>
+            <div class="displayItem">
+                <a class="imgLink" href="#"><img src="http://placehold.jp/500x400.png" alt="{{title}}"></a>
+                <a class="nameLink" href="#">RC Victory Park Residences</a>
+            </div>
+            <!-- <script type="text/x-handlebars-template" id="displayTemplate">
+                {{#each data}}
+                <div class="displayItem">
+                    <a class="imgLink" href="{{sitelink}}" target="_blank"><img src="{{image.url}}" alt="{{title}}"></a>
+                    <a class="nameLink" href="{{sitelink}}" target="_blank">{{title}}</a>
+                </div>
+                {{/each}}
+            </script> -->
+        </section>
+        <div class="toTop"></div>
+    </main>
+    <footer>
+        <div class="copyright">
+            <p>Copyright © 2021 LESS ckleo All rights reserved.</p>
         </div>
+    </footer>
+    <section id="filterSection" class="hide">
+        <h2 class="hide">filter Area</h2>
         <div class="filterArea">
-            <div class="filterBlock">
+            <div class="filterBlock filterAll">
                 <ul class="filterList">
                     <li class="filterItem"><a href="#" data-filter="all" class="active">すべて表示</a></li>
                 </ul>
             </div>
-            <div class="filterBlock">
+            <div class="filterBlock filterIndustry">
                 <h3 class="filterTitle">field</h3>
                 <div id="filterBlock1"></div>
                 <script type="text/x-handlebars-template" id="filterTemplate">
@@ -58,7 +130,7 @@
                 </ul>
             </script>
             </div>
-            <div class="filterBlock">
+            <div class="filterBlock filterStyle">
                 <h3 class="filterTitle">style</h3>
                 <div id="filterBlock2"></div>
                 <script type="text/x-handlebars-template" id="filterTemplate">
@@ -69,8 +141,8 @@
                 </ul>
             </script>
             </div>
-            <div class="filterBlock">
-                <h3 class="filterTitle">color</h3>
+            <div class="filterBlock filterColour">
+                <h3 class="filterTitle">colour</h3>
                 <div id="filterBlock3"></div>
                 <script type="text/x-handlebars-template" id="filterTemplate">
                     <ul class="filterList">
@@ -82,35 +154,6 @@
             </div>
         </div>
     </section>
-    <main>
-        <section id="displaySection">
-            <script type="text/x-handlebars-template" id="displayTemplate">
-                {{#each data}}
-                    <div class="displayItem">
-                        <a class="imgLink" href="{{sitelink}}" target="_blank"><img src="{{image.url}}" alt="{{title}}"></a>
-                        <a class="nameLink" href="{{sitelink}}" target="_blank">{{title}}</a>
-                    </div>
-                {{/each}}
-            </script>
-        </section>
-
-        <div><a href="#" id="loadMore">もっと見る</a></div>
-        <div class="totalPage">
-            <p></p>
-        </div>
-    </main>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="assets/about.html">About</a></li>
-                <li><a href="https://forms.gle/TNn6EovVNtyPoVtR8">Contact</a></li>
-                <li><a href="https://ckdesignblog.com/" target="_blank">Blog</a></li>
-            </ul>
-        </nav>
-        <div class="copyright">
-            <p>Copyright © 2021 LESS ckleo All rights reserved.</p>
-        </div>
-    </footer>
     <script type="text/javascript" src="assets/javascript/filter.js"></script>
     <script type="text/javascript" src="assets/javascript/main.js"></script>
 </body>

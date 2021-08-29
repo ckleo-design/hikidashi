@@ -1,15 +1,28 @@
+@font-face {
+  font-family: 'Formula Condensed Light';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/FormulaCondensed-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Formula Condensed Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/FormulaCondensed-Bold.woff") format("woff");
+}
+
 .hide {
   display: none;
 }
 
-header, #filterSection, main {
-  width: 88.33%;
-  max-width: 1272px;
+body header .headerContent, body main {
+  width: 86%;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 20px 0;
 }
 
-header, header .right nav ul, #filterSection .filterArea .filterBlock .filterList, footer nav ul, main #displaySection {
+body header .headerContent, body header .headerContent .navList ul, body footer, body main #displaySection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,332 +34,245 @@ header, header .right nav ul, #filterSection .filterArea .filterBlock .filterLis
       flex-wrap: nowrap;
 }
 
-header .right nav ul li a, #filterSection .filterArea .filterBlock h3.filterTitle, #filterSection .filterBtn a {
-  font-family: Formula Condensed, Arial, Helvetica, sans-serif;
+body header .headerContent .navList ul li, body footer .copyright p {
+  font-family: 'Formula Condensed Light', Arial, Helvetica, sans-serif;
 }
 
-header .right .subtitle p, #filterSection .filterArea .filterBlock .filterList .filterItem a, main#aboutMain .content h3,
-main#aboutMain .sns h3, main#aboutMain .content p,
-main#aboutMain .content a,
-main#aboutMain .sns p,
-main#aboutMain .sns a, main #loadMore, main .totalPage p {
-  font-family: Noto Sans JP Regular, Arial, Helvetica, sans-serif;
+body header .headerContent .filterBtn a {
+  font-family: 'Formula Condensed Bold', Arial, Helvetica, sans-serif;
+}
+
+body header .headerContent .title .subtitle, body main #displaySection .displayItem a.nameLink {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 img {
   vertical-align: bottom;
+  width: 100%;
+  height: auto;
 }
 
 a {
   text-decoration: none;
+  color: #1D1D1D;
 }
 
-header {
+li {
+  list-style-type: none;
+}
+
+body header {
+  border-bottom: 1px solid #ddd;
+}
+
+body header .headerContent {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  border-bottom: 1px solid #f3f3f3;
+  padding: 36px 0;
 }
 
-header .pageLogo img {
-  width: auto;
-  height: 24px;
+body header .headerContent .title {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
-header .right nav ul {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: auto;
+body header .headerContent .title .pageLogo {
+  width: 186px;
+  margin: 0 auto 3px;
 }
 
-header .right nav ul li {
-  list-style: none;
-}
-
-header .right nav ul li a {
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0.03em;
-  color: #000;
-}
-
-header .right nav ul li a.pageNow {
-  border-bottom: 1px solid #000;
-}
-
-header .right nav ul li:not(:last-child) {
-  margin-right: 24px;
-}
-
-header .right .subtitle {
-  margin-top: 12px;
-}
-
-header .right .subtitle p {
-  text-align: right;
-  font-size: 12px;
-  line-height: 100%;
-  color: #939393;
-}
-
-#filterSection {
-  padding: 0px 20px 40px;
-}
-
-#filterSection .filterArea {
-  background: #cbcbcb;
-}
-
-#filterSection .filterArea .filterBlock {
-  margin-top: 24px;
-}
-
-#filterSection .filterArea .filterBlock:nth-child(2) {
-  padding-top: 40px;
-  margin-top: 0;
-}
-
-#filterSection .filterArea .filterBlock h3.filterTitle {
-  color: #404040;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 100%;
-  letter-spacing: 0.03em;
-  margin-bottom: 3px;
-}
-
-#filterSection .filterArea .filterBlock .filterList {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#filterSection .filterArea .filterBlock .filterList .filterItem {
-  list-style: none;
-}
-
-#filterSection .filterArea .filterBlock .filterList .filterItem a {
-  color: #000;
-  font-size: 16px;
-  line-height: 160%;
-  font-weight: normal;
-  letter-spacing: 0.01em;
-}
-
-#filterSection .filterArea .filterBlock .filterList .filterItem a.active {
-  border-bottom: 2px solid #151515;
-}
-
-#filterSection .filterArea .filterBlock .filterList .filterItem:not(:last-child) {
-  margin-right: 24px;
-}
-
-#filterSection .filterBtn {
-  display: block;
-  text-align: center;
-  margin-top: 40px;
-}
-
-#filterSection .filterBtn a {
-  border: 1px solid #000;
-  border-radius: 45px;
-  padding: 8px 40px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.03em;
-}
-
-#filterSection .filterBtn a::before {
-  content: "";
-  display: inline-block;
-  background: url("../images/filterIcon.png") 0 0 no-repeat;
-  background-size: cover;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #2a2a2a;
-  padding: 20px 0;
-}
-
-footer nav ul {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-footer nav ul li {
-  list-style: none;
-}
-
-footer nav ul li:not(:last-child) {
-  margin-right: 12px;
-}
-
-footer nav ul li a {
-  color: #a5a5a5;
-  font-size: 12px;
-}
-
-footer .copyright {
-  margin-top: 16px;
-}
-
-footer .copyright p {
-  text-align: center;
+body header .headerContent .title .subtitle {
   font-size: 10px;
-  color: #a5a5a5;
-}
-
-main {
-  padding-bottom: 160px;
-}
-
-main#aboutMain {
-  padding-top: 40px;
-}
-
-main#aboutMain h2 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #000;
-}
-
-main#aboutMain h2 img {
-  height: 20px;
-  width: auto;
-  margin-right: 2px;
-  vertical-align: baseline;
-}
-
-main#aboutMain .content h3,
-main#aboutMain .sns h3 {
-  margin: 36px 0 12px;
-  font-size: 18px;
   line-height: 100%;
-  font-weight: bold;
-  color: #171717;
-}
-
-main#aboutMain .content p,
-main#aboutMain .content a,
-main#aboutMain .sns p,
-main#aboutMain .sns a {
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 160%;
   font-weight: normal;
-  color: #171717;
   letter-spacing: 0.03em;
+  color: #9C9C9C;
+  text-align: center;
 }
 
-main#aboutMain .content p span.contentttl,
-main#aboutMain .content p span.snsttl,
-main#aboutMain .content a span.contentttl,
-main#aboutMain .content a span.snsttl,
-main#aboutMain .sns p span.contentttl,
-main#aboutMain .sns p span.snsttl,
-main#aboutMain .sns a span.contentttl,
-main#aboutMain .sns a span.snsttl {
-  display: inline-block;
-  width: 100px;
-  margin-right: 40px;
+body header .headerContent .filterBtn {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  width: 250px;
 }
 
-main#aboutMain .content p small,
-main#aboutMain .content p small a,
-main#aboutMain .content a small,
-main#aboutMain .content a small a,
-main#aboutMain .sns p small,
-main#aboutMain .sns p small a,
-main#aboutMain .sns a small,
-main#aboutMain .sns a small a {
-  font-size: 11px;
+body header .headerContent .filterBtn a {
+  font-size: 20px;
   line-height: 100%;
+  letter-spacing: 0.03em;
+  color: #1D1D1D;
 }
 
-main#aboutMain .content img,
-main#aboutMain .sns img {
-  height: 20px;
-  width: auto;
-  margin-right: 2px;
-  vertical-align: baseline;
+body header .headerContent .filterBtn a::before {
+  content: "";
+  margin-right: 6px;
+  display: inline-block;
+  width: 16px;
+  height: 13px;
+  background: url("../images/filterIcon.png") center center no-repeat;
+  background-size: cover;
 }
 
-main #displaySection {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-column-gap: 1%;
-          column-gap: 1%;
+body header .headerContent .navList {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 250px;
+}
+
+body header .headerContent .navList ul li {
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  color: #1D1D1D;
+}
+
+body header .headerContent .navList ul li:not(:last-child) {
+  margin-right: 24px;
+}
+
+body header .headerContent .navList ul li .totalPage {
+  margin-left: 6px;
+}
+
+body footer {
+  width: 100%;
+  height: 30px;
+  background-color: #12142D;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main #displaySection .displayItem {
-  width: 24%;
-  max-width: 300px;
+body footer .copyright p {
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  color: #9C9C9C;
 }
 
-main #displaySection .displayItem img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  max-height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top center;
-     object-position: top center;
+body main {
+  padding: 60px 0;
 }
 
-main #displaySection .displayItem .nameLink {
-  margin: 10px 0 12px 5px;
+body main #displaySection {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body main #displaySection .displayItem {
+  width: calc((100% - 72px)/4);
+  padding-bottom: 24px;
+}
+
+body main #displaySection .displayItem:not(:nth-child(4n)) {
+  padding-right: 24px;
+}
+
+body main #displaySection .displayItem a.imgLink {
   display: block;
-  color: #000;
+  margin-bottom: 6px;
+}
+
+body main #displaySection .displayItem a.nameLink {
+  display: block;
+  padding-left: 6px;
+  padding-right: 6px;
   font-size: 12px;
   line-height: 120%;
   font-weight: normal;
-  font-family: "noto sans jp", Arial, Helvetica, sans-serif;
-  white-space: pre-wrap;
+  color: #333;
 }
 
-main #loadMore {
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 40px auto 0;
-  border: 1px solid #000;
-  border-radius: 45px;
-  padding: 8px 20px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.03em;
-}
-
-main #loadMore.noContent {
-  display: none;
-}
-
-main .totalPage p {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 10px;
-  line-height: 100%;
-  font-weight: normal;
-  color: #171717;
-  letter-spacing: 0.03em;
+@media screen and (max-width: 768px) {
+  body header .headerContent, body main {
+    width: 94%;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  body header .headerContent {
+    padding: 12px 0;
+  }
+  body header .headerContent .title .pageLogo {
+    width: 120px;
+    margin: 0 auto;
+  }
+  body header .headerContent .title .subtitle {
+    display: none;
+    font-size: 10px;
+    line-height: 100%;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    color: #9C9C9C;
+    text-align: center;
+  }
+  body header .headerContent .filterBtn {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: 20%;
+  }
+  body header .headerContent .filterBtn a {
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: #1D1D1D;
+  }
+  body header .headerContent .filterBtn a::before {
+    content: "";
+    margin-right: 6px;
+    display: inline-block;
+    width: 16px;
+    height: 13px;
+    background: url("../images/filterIcon.png") center center no-repeat;
+    background-size: cover;
+  }
+  body header .headerContent .navList {
+    width: 20%;
+  }
+  body header .headerContent .navList .spIcon {
+    text-align: right;
+  }
+  body header .headerContent .navList .spIcon::before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 13px;
+    background: url("../images/menuIcon.png") center center no-repeat;
+    background-size: cover;
+  }
+  body header .headerContent .navList ul {
+    display: none;
+  }
+  body footer {
+    height: 30px;
+  }
+  body footer .copyright p {
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: #9C9C9C;
+  }
+  body main {
+    padding: 24px 0;
+  }
+  body main #displaySection .displayItem {
+    width: 100%;
+  }
+  body main #displaySection .displayItem:not(:nth-child(4n)) {
+    padding-right: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
