@@ -1,0 +1,30 @@
+  $xs: 576px;
+  $sm: 768px;
+  $lg: 1400px;
+  $main-blue:#12142d;
+  $accent-blue:#161f43;
+  $accent-red :#f30506;
+  $accent-gray :#c6c6c6;
+  $pure-white :#fff;
+
+  // small device
+
+  @mixin media-breakpoint-xs {
+      @media screen and (max-width: $xs) {
+          @content;
+      }
+  }
+
+  // sp device
+  @mixin media-breakpoint-sm {
+      @media screen and (max-width: $sm) {
+          @content;
+      }
+  }
+
+  // pc xl device
+  @mixin media-breakpoint-lg {
+      @media screen and (min-width: $lg) {
+          @content;
+      }
+  }

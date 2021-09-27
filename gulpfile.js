@@ -10,6 +10,6 @@ gulp.task("sass", function (done) {
     done();
 });
 
-gulp.task("watch", function () {
+gulp.task("sass:watch", function () {
     gulp.watch("./assets/sass/**/*.scss", gulp.series(["sass"]))
 });

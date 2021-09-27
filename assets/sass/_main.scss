@@ -1,0 +1,13 @@
+.forSP {
+    display: none;
+}
+
+@include media-breakpoint-sm {
+    .forPC {
+        display: none;
+    }
+
+    .forSP {
+        display: block;
+    }
+}
