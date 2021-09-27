@@ -3,12 +3,16 @@
   $lg: 1400px;
   $main-blue:#12142d;
   $accent-blue:#161f43;
-  $accent-red :#f30506;
-  $accent-gray :#c6c6c6;
-  $pure-white :#fff;
+  $accent-red:#f30506;
+  $accent-gray:#c6c6c6;
+  $pure-white:#fff;
+  $pure-black:#000;
+  $font-eng-normal: 'Formula Condensed Light';
+  $font-eng-bold: 'Formula Condensed Bold';
+  $font-jp: 'noto sans jp';
+
 
   // small device
-
   @mixin media-breakpoint-xs {
       @media screen and (max-width: $xs) {
           @content;
