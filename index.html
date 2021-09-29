@@ -21,13 +21,14 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
 <body>
     <header>
         <div class="filterBtn">
-            <p>filter</p>
+            <p id="filterBtn">filter</p>
         </div>
         <div class="logoContent">
             <img src="assets/images/hikidashi-logo.svg" alt="HIKIDASHI logo">
@@ -38,71 +39,139 @@
             <div class="navItem"><a href="#">contact</a></div>
         </div>
     </header>
-    <div id="filterArea" class="filterArea">
+    <div id="filterArea" class="filterArea ">
+        <div class="navContent forSP">
+            <div class="navItem"><a href="#">blog</a></div>
+            <div class="navItem"><a href="#">about</a></div>
+            <div class="navItem"><a href="#">contact</a></div>
+        </div>
         <div class="filterContent">
             <div class="filterBlock">
-                <a href="">All List</a>
+                <div class="filterTitle">
+                    <p>All List</p>
+                </div>
+            </div>
+            <div class="filterNav forSP">
+                <p>Industry</p>
+                <p>Style</p>
+                <p>Colour</p>
             </div>
             <div class="filterBlock">
-                <p class="filterTitle">Industry</p>
-                <a href="#">ホテル・旅館</a>
-                <a href="#">学校・教育</a>
-                <a href="#">デザイン</a>
-                <a href="#">サービス</a>
-                <a href="#">運送・交通</a>
-                <a href="#">食品・飲料</a>
-                <a href="#">ファッション</a>
-                <a href="#">医療・病院</a>
-                <a href="#">アート・芸術</a>
-                <a href="#">ウェディング</a>
-                <a href="#">旅行</a>
-                <a href="#">ビューティー</a>
-                <a href="#">車・バイク</a>
-                <a href="#">自然</a>
-                <a href="#">団体</a>
-                <a href="#">スポーツ</a>
+                <div class="filterTitle forPC">
+                    <p>Industry</p>
+                </div>
+                <div class="filterItem">
+                    <p>ホテル・旅館</p>
+                    <p>学校・教育</p>
+                    <p>デザイン</p>
+                    <p>サービス</p>
+                    <p>運送・交通</p>
+                    <p>食品・飲料</p>
+                    <p>ファッション</p>
+                    <p>医療・病院</p>
+                    <p>ウェディング</p>
+                    <p>アート・芸術</p>
+                    <p>旅行</p>
+                    <p>ビューティー</p>
+                    <p>車・バイク</p>
+                    <p>自然</p>
+                    <p>団体</p>
+                    <p>スポーツ</p>
+                </div>
             </div>
             <div class="filterBlock">
-                <p class="filterTitle">Style</p>
-                <a href="#">ホテル・旅館</a>
-                <a href="#">学校・教育</a>
-                <a href="#">デザイン</a>
-                <a href="#">サービス</a>
-                <a href="#">運送・交通</a>
-                <a href="#">食品・飲料</a>
-                <a href="#">ファッション</a>
-                <a href="#">医療・病院</a>
-                <a href="#">アート・芸術</a>
-                <a href="#">ウェディング</a>
-                <a href="#">旅行</a>
-                <a href="#">ビューティー</a>
-                <a href="#">車・バイク</a>
-                <a href="#">自然</a>
-                <a href="#">団体</a>
-                <a href="#">スポーツ</a>
+                <div class="filterTitle forPC">
+                    <p>Style</p>
+                </div>
+                <div class="filterItem">
+                    <p>シンプル</p>
+                    <p>スタイリッシュ</p>
+                    <p>グラフィカル</p>
+                    <p>ポップ</p>
+                    <p>ダイナミック</p>
+                    <p>エレガント</p>
+                    <p>キュート・ガーリー</p>
+                    <p>ナチュラルアート・芸術</p>
+                    <p>グリッド</p>
+                    <p>イラスト和風</p>
+                    <p>手書き・アナログ</p>
+                    <p>レトロ</p>
+                    <p>3D</p>
+                    <p>ポートフォリオ</p>
+                </div>
             </div>
             <div class="filterBlock">
-                <p class="filterTitle">colour</p>
-                <a href="#">ホテル・旅館</a>
-                <a href="#">学校・教育</a>
-                <a href="#">デザイン</a>
-                <a href="#">サービス</a>
-                <a href="#">運送・交通</a>
-                <a href="#">食品・飲料</a>
-                <a href="#">ファッション</a>
-                <a href="#">医療・病院</a>
-                <a href="#">アート・芸術</a>
-                <a href="#">ウェディング</a>
-                <a href="#">旅行</a>
-                <a href="#">ビューティー</a>
-                <a href="#">車・バイク</a>
-                <a href="#">自然</a>
-                <a href="#">団体</a>
-                <a href="#">スポーツ</a>
+                <div class="filterTitle forPC">
+                    <p>Colour</p>
+                </div>
+                <div class="filterItem">
+                    <p>カラフル</p>
+                    <p>白</p>
+                    <p>グレー</p>
+                    <p>黒</p>
+                    <p>ベージュ</p>
+                    <p>オレンジ</p>
+                    <p>緑</p>
+                    <p>茶</p>
+                    <p>赤</p>
+                    <p>ピンク</p>
+                    <p>青</p>
+                    <p>紫</p>
+                    <p>金</p>
+                    <p>黄</p>
+                </div>
             </div>
         </div>
     </div>
-    <script src="assetsjs/scripts.js"></script>
+    <main>
+        <section class="sampleArea">
+            <h1>website sample area</h1>
+            <div id="sampleContent"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logoContent">
+            <img src="assets/images/hikidashi-logo-white.svg" alt="HIKIDASHI logo">
+        </div>
+        <div class="copyright">
+            <p>©all copyright to LESS ckleo 2021</p>
+        </div>
+        <div class="navContent">
+            <div class="navItem"><a href="#">blog</a></div>
+            <div class="navItem"><a href="#">about</a></div>
+            <div class="navItem"><a href="#">contact</a></div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // FETCHING DATA FROM JSON FILE
+            $.getJSON("assets/data/sample1.json",
+                function (data) {
+                    let sampleImage = '';
+                    let sampleTitle = '';
+                    let sample = '';
+
+                    // ITERATING THROUGH OBJECTS
+                    $.each(data, function (key, value) {
+                        sample += '<div class = "sampleBlock" >';
+                        sample += '<a href="' + value.link + '" target="_blank" >';
+                        sample += '<div class = "sampleThumbnail" >';
+                        sample += '<img src="' + value.thumbnail + '">';
+                        sample += '</div>';
+                        sample += '<div class = "sampleTitle" >';
+                        sample += '<h2>' + value.title + '</h2>';
+                        sample += '</div> </a>';
+                        sample += '</div>';
+                    });
+
+                    //INSERTING ROWS INTO TABLE
+                    $('#sampleContent').append(sample);
+                });
+        });
+    </script>
 </body>
 
 </html>

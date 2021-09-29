@@ -1,10 +1,138 @@
+//filter animation
+@keyframes filter {
+    0% {
+        display: none;
+    }
+
+
+    100% {
+        display: block;
+    }
+}
+
 .filterArea {
-    padding: 24px 10.3%;
+    position: sticky;
+    top: 81px;
+    background: #fff;
+    padding: 30px 10.3%;
     box-shadow: 0px 4px 4px #bcbcbc1f;
+    animation: 7s ease-in 0s 1 filter;
+    transform: translateY(-360px);
+    transition: all .73s cubic-bezier(0, 0, .27, .99);
+    display: none;
+
+    &.active {
+        transform: translateY(0);
+        display: block;
+    }
 
     .filterContent {
+
         .filterBlock {
-            background: tomato;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            .filterTitle {
+                margin-bottom: 8px;
+
+                p {
+                    font: normal bold 14px/100% 'noto sans jp';
+                    color: $sub-black;
+                    letter-spacing: .03em;
+                }
+            }
+
+            .filterItem {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                margin-left: 12px;
+
+                p {
+                    font: normal normal 12px/200% 'noto sans jp';
+                    color: $sub-black;
+                    letter-spacing: .03em;
+
+                    &:not(:last-child) {
+                        margin-right: 26px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-sm {
+    .filterArea {
+        padding: 20px 1%;
+        box-shadow: 0px 4px 4px #bcbcbc1f;
+
+        .navContent {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+            .navItem {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+
+                a {
+                    text-decoration: none;
+                    font: normal normal 12px/100% $font-eng-normal;
+                    color: $pure-black;
+                    letter-spacing: .03em;
+                }
+            }
+        }
+
+        .filterContent {
+            margin-top: 30px;
+
+            .filterNav {
+                display: flex;
+                flex-direction: row;
+
+                p {
+                    width: 33%;
+                    padding: 20px 0;
+                    text-align: center;
+                    font: normal bold 14px/100% 'noto sans jp';
+                    color: $pure-black;
+                    letter-spacing: .03em;
+                }
+            }
+
+            .filterBlock {
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
+
+                padding: 0 8%;
+
+                .filterTitle {
+                    text-align: center;
+                }
+
+                .filterItem {
+                    flex-direction: column;
+                    margin-left: 0;
+
+                    p {
+                        &:not(:last-child) {
+                            margin-right: 0;
+                        }
+
+                    }
+                }
+            }
         }
     }
 }
