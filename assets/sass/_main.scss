@@ -25,7 +25,7 @@ main {
     transition: transform .73s cubic-bezier(0, 0, .27, .99);
 
     &.active {
-        // transform: translateY(0);
+        transform: translateY(0);
     }
 
     .sampleArea {

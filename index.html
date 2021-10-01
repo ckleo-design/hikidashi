@@ -60,23 +60,7 @@
                 <div class="filterTitle forPC">
                     <p>Industry</p>
                 </div>
-                <div class="filterItem">
-                    <p>ホテル・旅館</p>
-                    <p>学校・教育</p>
-                    <p>デザイン</p>
-                    <p>サービス</p>
-                    <p>運送・交通</p>
-                    <p>食品・飲料</p>
-                    <p>ファッション</p>
-                    <p>医療・病院</p>
-                    <p>ウェディング</p>
-                    <p>アート・芸術</p>
-                    <p>旅行</p>
-                    <p>ビューティー</p>
-                    <p>車・バイク</p>
-                    <p>自然</p>
-                    <p>団体</p>
-                    <p>スポーツ</p>
+                <div class="filterItem filterItemIndustry">
                 </div>
             </div>
             <div class="filterBlock">
@@ -84,20 +68,6 @@
                     <p>Style</p>
                 </div>
                 <div class="filterItem">
-                    <p>シンプル</p>
-                    <p>スタイリッシュ</p>
-                    <p>グラフィカル</p>
-                    <p>ポップ</p>
-                    <p>ダイナミック</p>
-                    <p>エレガント</p>
-                    <p>キュート・ガーリー</p>
-                    <p>ナチュラルアート・芸術</p>
-                    <p>グリッド</p>
-                    <p>イラスト和風</p>
-                    <p>手書き・アナログ</p>
-                    <p>レトロ</p>
-                    <p>3D</p>
-                    <p>ポートフォリオ</p>
                 </div>
             </div>
             <div class="filterBlock">
@@ -105,20 +75,6 @@
                     <p>Colour</p>
                 </div>
                 <div class="filterItem">
-                    <p>カラフル</p>
-                    <p>白</p>
-                    <p>グレー</p>
-                    <p>黒</p>
-                    <p>ベージュ</p>
-                    <p>オレンジ</p>
-                    <p>緑</p>
-                    <p>茶</p>
-                    <p>赤</p>
-                    <p>ピンク</p>
-                    <p>青</p>
-                    <p>紫</p>
-                    <p>金</p>
-                    <p>黄</p>
                 </div>
             </div>
         </div>
@@ -146,12 +102,9 @@
     <script src="assets/js/main.js"></script>
     <script>
         $(document).ready(function () {
-
             // FETCHING DATA FROM JSON FILE
             $.getJSON("assets/data/sample1.json",
                 function (data) {
-                    let sampleImage = '';
-                    let sampleTitle = '';
                     let sample = '';
 
                     // ITERATING THROUGH OBJECTS
@@ -169,6 +122,21 @@
 
                     //INSERTING ROWS INTO TABLE
                     $('#sampleContent').append(sample);
+                });
+            $.getJSON("assets/data/filter.json",
+                function (data) {
+                    let filterItemIndustry = '';
+                    let i = 0;
+
+                    // ITERATING THROUGH OBJECTS
+                    $.each(data, function (key, value) {
+                        for (let i = 0; i < data.industry.length; i++) {
+                            filterItemIndustry += '<p>' + data.industry[i] + '</p>';
+                        }
+                    });
+
+                    //INSERTING ROWS INTO TABLE
+                    $('.filterItemIndustry').append(filterItemIndustry);
                 });
         });
     </script>

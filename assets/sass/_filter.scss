@@ -11,19 +11,15 @@
 }
 
 .filterArea {
-    position: sticky;
-    top: 81px;
     background: #fff;
     padding: 30px 10.3%;
     box-shadow: 0px 4px 4px #bcbcbc1f;
     animation: 7s ease-in 0s 1 filter;
-    transform: translateY(-360px);
+    // transform: translateY(-360px);
     transition: all .73s cubic-bezier(0, 0, .27, .99);
-    display: none;
 
     &.active {
         transform: translateY(0);
-        display: block;
     }
 
     .filterContent {
