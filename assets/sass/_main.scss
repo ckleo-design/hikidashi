@@ -18,18 +18,46 @@
 }
 
 
+.wrapper {
+    position: relative;
+    transform: translateX(0);
+    transition: transform .5s ease-in-out;
+    z-index: 99;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000bf;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+    }
+
+
+    &.active {
+        position: fixed;
+        transform: translateX(320px);
+
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+}
 
 main {
     background: #F6F6F6;
-    // transform: translateY(-360px);
-    transition: transform .73s cubic-bezier(0, 0, .27, .99);
-
-    &.active {
-        transform: translateY(0);
-    }
+    padding: 60px 0;
 
     .sampleArea {
-        padding: 60px 2.5% 100px;
+        padding: 0 2.5% 100px;
 
 
         h1 {
@@ -74,6 +102,96 @@ main {
                         letter-spacing: .03em;
                     }
                 }
+            }
+        }
+
+        .moreBtn {
+            width: fit-content;
+            margin: 60px auto 0;
+
+            a {
+                padding: 5px 42px 0;
+                background: $main-blue;
+                text-decoration: none;
+                font: normal normal 27px/100% $font-eng-normal;
+                color: $pure-white;
+                letter-spacing: .11em;
+            }
+        }
+    }
+
+    .blogRecommend {
+        padding: 0 2.5%;
+        margin-bottom: 60px;
+
+        h3 {
+            margin-bottom: 30px;
+            text-align: center;
+            font: normal bold 14px/100% "noto sans jp";
+            color: $pure-black;
+        }
+
+        .blogContent {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: center;
+
+            gap: 5%;
+
+            .blogBlock {
+                width: 27%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                // align-items: flex-start;
+                .blogDetail {
+                    margin-left: 24px;
+
+                    .title {
+                        font: normal bold 14px/100% "noto sans jp";
+                        color: $pure-black;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 42px;
+                            height: 1px;
+                            background: $pure-black;
+                            margin-top: 6px;
+                        }
+                    }
+
+                    .about {
+                        margin-top: 10px;
+                        font: normal normal 12px/120% "noto sans jp";
+                        color: $pure-black;
+                        letter-spacing: .02em;
+                    }
+                }
+            }
+        }
+    }
+
+    .snsContent {
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        a {
+            height: 18px;
+
+            &:nth-child(2) {
+                margin: 0 18px;
+            }
+
+            img {
+                height: 100%;
+                width: auto;
             }
         }
     }

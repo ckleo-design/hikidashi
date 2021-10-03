@@ -1,25 +1,33 @@
-//filter animation
-@keyframes filter {
-    0% {
-        display: none;
-    }
-
-
-    100% {
-        display: block;
-    }
-}
-
 .filterArea {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
     background: #fff;
-    padding: 30px 10.3%;
-    box-shadow: 0px 4px 4px #bcbcbc1f;
-    animation: 7s ease-in 0s 1 filter;
-    // transform: translateY(-360px);
-    transition: all .73s cubic-bezier(0, 0, .27, .99);
+    padding: 81px 40px 30px;
+    box-shadow: 4px 0px 4px #bcbcbc1f;
+    overflow-y: auto;
+    transform: translateX(-320px);
 
-    &.active {
-        transform: translateY(0);
+
+    .closeBtn {
+        position: fixed;
+        top: 32px;
+        right: 32px;
+
+        a {
+            text-decoration: none;
+            font: normal normal 14px/100% $font-eng-normal;
+            color: $pure-black;
+            letter-spacing: .03em;
+
+            &::before {
+                content: "x";
+                margin-right: 6px;
+            }
+        }
     }
 
     .filterContent {
@@ -36,27 +44,36 @@
                     font: normal bold 14px/100% 'noto sans jp';
                     color: $sub-black;
                     letter-spacing: .03em;
+
+                    .allListNum {
+                        margin-left: 6px;
+                    }
                 }
             }
 
             .filterItem {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 margin-left: 12px;
 
-                p {
+                a {
                     font: normal normal 12px/200% 'noto sans jp';
                     color: $sub-black;
                     letter-spacing: .03em;
+                    text-decoration: none;
+                    width: fit-content;
+                    transition: opacity .2s ease-in-out;
 
-                    &:not(:last-child) {
-                        margin-right: 26px;
-                    }
+
 
                     &:hover {
                         cursor: pointer;
+                    }
+
+                    &:active {
+                        opacity: .2;
                     }
                 }
             }

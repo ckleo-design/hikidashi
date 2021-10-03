@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $("#filterBtn").click(function () {
-        $("#filterArea , main").toggleClass("active");
+$(function () {
+    $("#filterBtn,.filterArea .closeBtn,.filterItem a").click(function () {
+        $(".wrapper").toggleClass("active");
     });
 });

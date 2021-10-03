@@ -22,124 +22,166 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
 </head>
 
 <body>
-    <header>
-        <div class="filterBtn">
-            <p id="filterBtn">filter</p>
-        </div>
-        <div class="logoContent">
-            <img src="assets/images/hikidashi-logo.svg" alt="HIKIDASHI logo">
-        </div>
-        <div class="navContent">
-            <div class="navItem"><a href="#">blog</a></div>
-            <div class="navItem"><a href="#">about</a></div>
-            <div class="navItem"><a href="#">contact</a></div>
-        </div>
-    </header>
-    <div id="filterArea" class="filterArea ">
-        <div class="navContent forSP">
-            <div class="navItem"><a href="#">blog</a></div>
-            <div class="navItem"><a href="#">about</a></div>
-            <div class="navItem"><a href="#">contact</a></div>
-        </div>
-        <div class="filterContent">
-            <div class="filterBlock">
-                <div class="filterTitle">
-                    <p>All List</p>
+    <div class="wrapper">
+        <div id="filterArea" class="filterArea">
+            <div class="closeBtn">
+                <a href="#">close</a>
+            </div>
+            <div class="navContent forSP">
+                <div class="navItem"><a href="#">blog</a></div>
+                <div class="navItem"><a href="#">about</a></div>
+                <div class="navItem"><a href="#">contact</a></div>
+            </div>
+            <div class="filterContent">
+                <div class="filterBlock">
+                    <div class="filterTitle">
+                        <p>All List<span class="allListNum">(0)</span></p>
+                    </div>
                 </div>
-            </div>
-            <div class="filterNav forSP">
-                <p>Industry</p>
-                <p>Style</p>
-                <p>Colour</p>
-            </div>
-            <div class="filterBlock">
-                <div class="filterTitle forPC">
+                <div class="filterNav forSP">
                     <p>Industry</p>
-                </div>
-                <div class="filterItem filterItemIndustry">
-                </div>
-            </div>
-            <div class="filterBlock">
-                <div class="filterTitle forPC">
                     <p>Style</p>
-                </div>
-                <div class="filterItem">
-                </div>
-            </div>
-            <div class="filterBlock">
-                <div class="filterTitle forPC">
                     <p>Colour</p>
                 </div>
-                <div class="filterItem">
+                <div class="filterBlock">
+                    <div class="filterTitle forPC">
+                        <p>Industry</p>
+                    </div>
+                    <div class="filterItem" id="filterIndustryItem">
+                        <script type="text/x-handlebars-template" id="industryInsert">
+                            {{#each filterIndustryItem}}
+                        <a href="#" class="{{itemNum}}">{{itemName}}</a>
+                        {{/each}}
+                    </script>
+                    </div>
+                </div>
+                <div class="filterBlock">
+                    <div class="filterTitle forPC">
+                        <p>Style</p>
+                    </div>
+                    <div class="filterItem" id="filterStyleItem">
+                        <script type="text/x-handlebars-template" id="styleInsert">
+                            {{#each filterStyleItem}}
+                        <a href="#" class="{{itemNum}}">{{itemName}}</a>
+                        {{/each}}
+                    </script>
+                    </div>
+                </div>
+                <div class="filterBlock">
+                    <div class="filterTitle forPC">
+                        <p>Colour</p>
+                    </div>
+                    <div class="filterItem" id="filterColourItem">
+                        <script type="text/x-handlebars-template" id="colourInsert">
+                            {{#each filterColourItem}}
+                        <a href="#" class="{{itemNum}}">{{itemName}}</a>
+                        {{/each}}
+                    </script>
+                    </div>
                 </div>
             </div>
         </div>
+        <header>
+            <div class="filterBtn">
+                <p id="filterBtn">filter</p>
+            </div>
+            <div class="logoContent">
+                <h1>
+                    <img src="assets/images/hikidashi-logo.svg" alt="HIKIDASHI logo">
+                </h1>
+            </div>
+            <div class="navContent">
+                <div class="navItem"><a href="#">blog</a></div>
+                <div class="navItem"><a href="#">about</a></div>
+                <div class="navItem"><a href="#">contact</a></div>
+            </div>
+        </header>
+        <main>
+            <section class="sampleArea">
+                <h1>website sample area</h1>
+                <div id="sampleContent">
+                    <script type="text/x-handlebars-template" id="sampleInsert">
+                        {{#each sample}}
+                <div class="sampleBlock">
+                    <a href="{{siteLink}}" target="_blank">
+                        <div class="sampleThumbanil">
+                            <img src="{{siteThumbnail}}" alt="{{siteTitle}}">
+                        </div>
+                        <div class="sampleTitle">
+                            <h2>{{siteTitle}}</h2>
+                        </div>
+                    </a>
+                </div>
+                    {{/each}}
+                </script>
+                </div>
+                <div class="moreBtn">
+                    <a href="#">MORE</a>
+                </div>
+            </section>
+            <section class="blogRecommend">
+                <h3>おすすめ記事</h3>
+                <div class="blogContent">
+                    <div class="blogBlock">
+                        <div class="blogThumbnail">
+                            <img src="http://placehold.jp/124x93.png" alt="">
+                        </div>
+                        <div class="blogDetail">
+                            <p class="title">コーディング</p>
+                            <p class="about">〈CHARM CHARM〉リップグロスで、マンネリと無縁のSEXライフを</p>
+                        </div>
+                    </div>
+                    <div class="blogBlock">
+                        <div class="blogThumbnail">
+                            <img src="http://placehold.jp/124x93.png" alt="">
+                        </div>
+                        <div class="blogDetail">
+                            <p class="title">コーディング</p>
+                            <p class="about">〈CHARM CHARM〉リップグロスで、マンネリと無縁のSEXライフを</p>
+                        </div>
+                    </div>
+                    <div class="blogBlock">
+                        <div class="blogThumbnail">
+                            <img src="http://placehold.jp/124x93.png" alt="">
+                        </div>
+                        <div class="blogDetail">
+                            <p class="title">コーディング</p>
+                            <p class="about">〈CHARM CHARM〉リップグロスで、マンネリと無縁のSEXライフを</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="snsContent">
+                <a href="#"><img src="assets/images/instagram.svg" alt=""></a>
+                <a href="#"><img src="assets/images/twtter.svg" alt=""></a>
+                <a href="#"><img src="assets/images/pinterest.svg" alt=""></a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="logoContent">
+                <img src="assets/images/hikidashi-logo-white.svg" alt="HIKIDASHI logo">
+            </div>
+            <div class="copyright">
+                <p>©all copyright to LESS ckleo 2021</p>
+            </div>
+            <div class="navContent">
+                <div class="navItem"><a href="#">blog</a></div>
+                <div class="navItem"><a href="#">about</a></div>
+                <div class="navItem"><a href="#">contact</a></div>
+            </div>
+        </footer>
     </div>
-    <main>
-        <section class="sampleArea">
-            <h1>website sample area</h1>
-            <div id="sampleContent"></div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="logoContent">
-            <img src="assets/images/hikidashi-logo-white.svg" alt="HIKIDASHI logo">
-        </div>
-        <div class="copyright">
-            <p>©all copyright to LESS ckleo 2021</p>
-        </div>
-        <div class="navContent">
-            <div class="navItem"><a href="#">blog</a></div>
-            <div class="navItem"><a href="#">about</a></div>
-            <div class="navItem"><a href="#">contact</a></div>
-        </div>
-    </footer>
     <script src="assets/js/main.js"></script>
-    <script>
-        $(document).ready(function () {
-            // FETCHING DATA FROM JSON FILE
-            $.getJSON("assets/data/sample1.json",
-                function (data) {
-                    let sample = '';
+    <script src="assets/js/filter.js"></script>
+    <script src="assets/js/sample.js"></script>
 
-                    // ITERATING THROUGH OBJECTS
-                    $.each(data, function (key, value) {
-                        sample += '<div class = "sampleBlock" >';
-                        sample += '<a href="' + value.link + '" target="_blank" >';
-                        sample += '<div class = "sampleThumbnail" >';
-                        sample += '<img src="' + value.thumbnail + '">';
-                        sample += '</div>';
-                        sample += '<div class = "sampleTitle" >';
-                        sample += '<h2>' + value.title + '</h2>';
-                        sample += '</div> </a>';
-                        sample += '</div>';
-                    });
-
-                    //INSERTING ROWS INTO TABLE
-                    $('#sampleContent').append(sample);
-                });
-            $.getJSON("assets/data/filter.json",
-                function (data) {
-                    let filterItemIndustry = '';
-                    let i = 0;
-
-                    // ITERATING THROUGH OBJECTS
-                    $.each(data, function (key, value) {
-                        for (let i = 0; i < data.industry.length; i++) {
-                            filterItemIndustry += '<p>' + data.industry[i] + '</p>';
-                        }
-                    });
-
-                    //INSERTING ROWS INTO TABLE
-                    $('.filterItemIndustry').append(filterItemIndustry);
-                });
-        });
-    </script>
 </body>
 
 </html>
