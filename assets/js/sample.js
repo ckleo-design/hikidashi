@@ -107,4 +107,3 @@
      $("#sampleContent").html(html);
      const listNum = values.sample.length;
      $(".allListNum").html(`(${listNum})`)
-     console.log(listNum);
