@@ -1,5 +1,5 @@
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .forSP {
@@ -76,6 +76,8 @@ main {
 
             .sampleBlock {
                 border-radius: 3px;
+                position: relative;
+                max-width: 300px;
 
                 a {
                     text-decoration: none;
@@ -91,6 +93,8 @@ main {
                         width: 100%;
                         height: 100%;
                     }
+
+
                 }
 
                 .sampleTitle {
@@ -100,6 +104,119 @@ main {
                         font: normal normal 12px/120% 'noto sans jp';
                         color: $pure-black;
                         letter-spacing: .03em;
+                    }
+                }
+
+                &:hover .popupBtn {
+                    opacity: 1;
+                }
+
+                .popupBtn {
+                    display: block;
+                    width: 36px;
+                    height: 36px;
+                    position: absolute;
+                    bottom: 43px;
+                    right: 8px;
+                    transition: opacity .12s linear;
+                    opacity: 0;
+
+                    &:hover {
+                        opacity: .8;
+                        cursor: pointer;
+                    }
+                }
+
+                .popup {
+                    display: block;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                    z-index: 999;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    &.hidden {
+                        display: none;
+                    }
+
+                    width: 100%;
+
+                    .popupBg {
+                        width: 100%;
+                        height: 100%;
+                        background: #000000bf;
+                        overflow-y: auto;
+
+                        .popupContent {
+                            padding: 100px 0;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: flex-start;
+                            overflow-y: auto;
+                            overflow-x: hidden;
+                            -ms-overflow-style: none;
+                            scrollbar-width: none;
+
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
+
+
+                            .popupImage {
+                                width: 760px;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+
+                            }
+
+                            .popupDetail {
+                                margin-left: 16px;
+                                background-color: $pure-white;
+                                padding: 160px 10px;
+                                width: 350px;
+                                height: fit-content;
+
+                                p,
+                                a {
+                                    text-decoration: none;
+                                    margin-top: 7px;
+                                    text-align: left;
+                                    font: normal normal 12px/200% 'noto sans jp';
+                                    color: $sub-black;
+                                    letter-spacing: 0.03em;
+
+
+                                    span {
+                                        display: inline-block;
+                                        margin-right: 16px;
+                                        width: 60px;
+                                        text-align: right;
+                                    }
+                                }
+
+                                a::after {
+                                    content: "";
+                                    background: url(../images/newwindow.svg);
+                                    background-size: cover;
+                                    display: inline-block;
+                                    width: 12px;
+                                    height: 12px;
+                                    margin-left: 6px;
+
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -116,6 +233,34 @@ main {
                 font: normal normal 27px/100% $font-eng-normal;
                 color: $pure-white;
                 letter-spacing: .11em;
+            }
+        }
+
+        //pagenavi
+        .pagination-container {
+            margin-top: 60px;
+
+            .pagination {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                li {
+                    &:not(:last-child) {
+                        margin-right: 30px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        font: normal normal 14px/100% $font-eng-normal;
+                        color: $pure-black;
+                    }
+
+                    &.disabled a {
+                        color: $accent-gray;
+                        cursor: default;
+                    }
+                }
             }
         }
     }

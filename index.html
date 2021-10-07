@@ -19,14 +19,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Include Handlebars from a CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="assets/js/pagination.min.js"></script>
-
-
 </head>
 
 <body>
@@ -112,20 +105,37 @@
                         {{#each sample}}
                 <div class="sampleBlock">
                     <a href="{{siteLink}}" target="_blank">
-                        <div class="sampleThumbanil">
+                        <div class="sampleThumbnail">
                             <img src="{{siteThumbnail}}" alt="{{siteTitle}}">
                         </div>
                         <div class="sampleTitle">
                             <h2>{{siteTitle}}</h2>
                         </div>
                     </a>
+                    <img class="popupBtn" src="assets/images/open.svg" alt="">
+                    <div class="popup hidden">
+                        <div class="popupBg">
+                            <div class="popupContent">
+                                <div class="popupImage">
+                                    <img src="{{sitePopupImage}}" alt="">
+                                </div>
+                                <div class="popupDetail">
+                                    <p class="popupTitle"><span></span>{{siteTitle}}</p>
+                                    <p class="popupUrl"><span>URL</span><a href="{{siteLink}}" target="_blank">{{siteLink}}</a></p>
+                                    <p class="popupIndustry"><span>INDUSTRY</span>{{siteIndustry}}</p>
+                                    <p class="popupStyle"><span>STYLE</span>{{siteStyle}}</p>
+                                    <p class="popupColour"><span>COLOUR</span>{{siteColour}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                     {{/each}}
                 </script>
                 </div>
-                <div class="moreBtn">
+                <!-- <div class="moreBtn">
                     <a href="#">MORE</a>
-                </div>
+                </div> -->
             </section>
             <section class="blogRecommend">
                 <h3>おすすめ記事</h3>
@@ -165,16 +175,6 @@
                 <a href="#"><img src="assets/images/pinterest.svg" alt=""></a>
             </div>
         </main>
-        <script type="text/template" id="template-demo">
-            <ul>
-    {{#each data}}
-        <li>{{this}}</li>
-    {{/each}}
-    </ul>
-</script>
-        <div id="data-container"></div>
-        <div id="pagination-container"></div>
-
         <footer>
             <div class="logoContent">
                 <img src="assets/images/hikidashi-logo-white.svg" alt="HIKIDASHI logo">
@@ -189,9 +189,13 @@
             </div>
         </footer>
     </div>
-    <script src="assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="assets/js/paginathing.js"></script>
     <script src="assets/js/filter.js"></script>
     <script src="assets/js/sample.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 </body>
